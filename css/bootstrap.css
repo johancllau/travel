@@ -5279,7 +5279,7 @@ a.list-group-item.active > .badge,
 .thumbnail > img,
 .thumbnail a > img {
   display: block;
-  height: auto;
+  height: 250px;
   max-width: 100%;
   margin-right: auto;
   margin-left: auto;
@@ -6347,8 +6347,9 @@ button.close {
 .carousel-inner > .item > img,
 .carousel-inner > .item > a > img {
   display: block;
-  height: auto;
-  max-width: 100%;
+  max-height: 435px;
+  min-width: 100%;
+  max-width: 200%;
   line-height: 1;
 }
 
