@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Dec 28, 2019 at 08:13 AM
+-- Generation Time: Dec 28, 2019 at 11:28 AM
 -- Server version: 10.1.31-MariaDB
 -- PHP Version: 7.2.4
 
@@ -87,7 +87,7 @@ CREATE TABLE `user` (
   `name` varchar(100) NOT NULL,
   `email` varchar(255) NOT NULL,
   `gender` enum('pria','wanita') NOT NULL,
-  `notelp` int(12) NOT NULL,
+  `notelp` char(12) DEFAULT NULL,
   `address` varchar(100) NOT NULL,
   `status` enum('0','1') NOT NULL DEFAULT '0'
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
@@ -97,8 +97,8 @@ CREATE TABLE `user` (
 --
 
 INSERT INTO `user` (`username`, `password`, `name`, `email`, `gender`, `notelp`, `address`, `status`) VALUES
-('Admin', 'admin123', 'johan cllau', 'cllaujhohan@gmail.com', 'pria', 2147483647, 'janti', '1'),
-('Galang krsnt', 'galang123', 'Galang Krisnanto', 'Galangkrsnt@gmail.com', 'pria', 2147483647, 'bantul', '0');
+('Admin', 'admin123', 'johan cllau', 'cllaujhohan@gmail.com', 'pria', '082237064375', 'janti', '1'),
+('Dhany', 'Dhany123', 'Aisyiyah Dhani', 'Dhnay@gmail.com', 'wanita', '089538925260', 'bantul			', '0');
 
 --
 -- Indexes for dumped tables
