@@ -4,14 +4,14 @@
 		<title>Akakom Travel</title>
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<!-- Bootstrap -->
-		<link href="css/bootstrap.css" rel="stylesheet">
+		<link href="../css/bootstrap.css" rel="stylesheet">
 		
 		<!--Google Fonts-->
 		<link href='http://fonts.googleapis.com/css?family=Belgrano|Courgette&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
 	
 		
 		<!--Bootshape-->
-		<link href="css/bootshape.css" rel="stylesheet">
+		<link href="../css/bootshape.css" rel="stylesheet">
 	
 		<!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
 		<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -22,7 +22,7 @@
 	  </head>
 <body>
 	<h3 align="center">Form Daftar</h3>
-	<form = name="form-Daftar" action="Daftar.php" method="post">
+	<form = name="form-Daftar" action="daftar_new_user.php" method="post">
 		<table border="0" align="center" cellpadding="10">
 			<tr>
 				<td><label for="Nama">Nama</label></td>
@@ -57,6 +57,15 @@
 			<tr>
 				<td><label for="No-telp">No.Telp</label></td>
 				<td><input type="text" name="notelp" id="No-telp" placeholder="082237xxxxxxx"></td>
+			</tr>
+			<tr>
+				<td><label for="Hak-Akses">Hak Akses</label></td>
+				<td>
+					<select name="status">
+						<option value="0">User Member</option>
+						<option value="1">Admin</option>
+					</select>
+				</td>
 			</tr>
 			<tr>
 				<td colspan="2" align="center">

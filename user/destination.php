@@ -24,7 +24,7 @@
   </head>
   <body>
    <?php 
-   include "navbar.html"; 
+     include "navbar.html"; 
    ?>
     <!-- Slide gallery -->
     <div class="jumbotron">
@@ -38,9 +38,7 @@
     </div>
 
     <div class="btn-toolbar text-center">
-      <div class="add">
-        <a href="form_input_data_destination.html" role="button" class="btn btn-success">Add Destinations</a>
-    </div>
+
     </div>
 
     <div class="container thumbs">

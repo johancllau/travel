@@ -106,7 +106,7 @@
     </div><!-- End Thumbnails -->
     <!-- Footer -->
     <?php
-      include "footer.html";
+      include "../footer.html";
       ?>
 
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
