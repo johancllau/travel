@@ -43,7 +43,7 @@ include "koneksi.php";
 			$row = mysqli_fetch_assoc($hasil);
 			if($row['status'] == 1){
 				$_SESSION['admin']=$user;
-				echo '<script language="javascript">alert("Anda berhasil Login Sebagai Admin!"); document.location="admin/homeadmin.php";</script>';
+				echo '<script language="javascript">alert("Anda berhasil Login Sebagai Admin!"); document.location="admin/home.php";</script>';
 			}
 			else{
 				$_SESSION['guest']=$user;

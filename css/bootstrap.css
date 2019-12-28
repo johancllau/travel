@@ -3701,6 +3701,11 @@ input[type="button"].btn-block {
   clear: both;
 }
 
+.btn-toolbar .add {
+  float: right;
+  padding-right: 100px;
+}
+
 .btn-toolbar .btn-group {
   float: left;
 }
@@ -7117,4 +7122,18 @@ td.visible-print {
   td.hidden-print {
     display: none !important;
   }
+}
+
+.search {
+  float: left;
+  padding-left: 500px;
+  font-size: 22px;
+}
+
+.search button{
+  float: right;
+  background: #ddd;
+  font-size: 25px;
+  border: none;
+  cursor: pointer;
 }
