@@ -23,11 +23,22 @@
 <body>
 	<h3 align="center">Form Input Data Destinasi</h3>
 	<br/>
-	<form = name="form-Daftar" action="Daftar.php" method="post" enctype="multipart/form-data">
+	<form = name="form-Daftar" action="save_destination.php" method="post" enctype="multipart/form-data">
 		<table border="0" align="center" cellpadding="10">
 			<tr>
 				<td><label for="Nama">Nama</label></td>
 				<td><input type="text" name="nama" id="Nama" placeholder="Nama"></td>
+			</tr>
+			<tr>
+				<td><label for="Lokasi">Lokasi</label></td>
+				<td><select name="lokasi">
+					<option value="">Select...</option>
+					<option value="Yogyakarta">Yogyakarta</option>
+					<option value="Gunung Kidul">Gunung Kidul</option>
+					<option value="Kulon Progo">Kulon Progo</option>
+					<option value="Bantul">Bantul</option>
+					<option value="Sleman">Sleman</option>
+			 	</select></td>
 			</tr>
 			<tr>
 				<td><label for="Alamat">Alamat</label></td>
