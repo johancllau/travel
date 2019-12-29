@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.8.0
+-- version 4.8.2
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Dec 28, 2019 at 11:28 AM
--- Server version: 10.1.31-MariaDB
--- PHP Version: 7.2.4
+-- Generation Time: Dec 29, 2019 at 01:31 PM
+-- Server version: 10.1.34-MariaDB
+-- PHP Version: 7.2.8
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -44,6 +44,7 @@ CREATE TABLE `booking` (
 CREATE TABLE `destinasi` (
   `id_destinasi` int(11) NOT NULL,
   `nama_destinasi` varchar(100) NOT NULL,
+  `lokasi_destinasi` varchar(50) NOT NULL,
   `alamat_destinasi` varchar(100) NOT NULL,
   `image_destinasi` varchar(50) NOT NULL,
   `description` varchar(1000) NOT NULL
@@ -152,7 +153,7 @@ ALTER TABLE `booking`
 -- AUTO_INCREMENT for table `destinasi`
 --
 ALTER TABLE `destinasi`
-  MODIFY `id_destinasi` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id_destinasi` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT for table `mobil_travell`
