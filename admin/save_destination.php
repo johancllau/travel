@@ -89,6 +89,7 @@
 		}
 	}
 	echo "<br/>File sudah di upload.<br/>";
+	echo "<a href = 'destinasi.php'>Kembali ke halaman destinasi</a>";
 	function buat_thumbnail ($file_src,$file_dst)
 	{
 		list($w_src,$h_src,$type) = getImageSize ($file_src);
