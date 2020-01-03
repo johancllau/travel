@@ -47,11 +47,11 @@
     <h1>Yogyakarta</h1>
         <?php
           include "../koneksi.php";
-          $query = mysqli_query($kon,"SELECT * FROM destinasi WHERE lokasi_destinasi = 'Yogyakarta'");
+          $query = mysqli_query($kon,"SELECT * FROM destinasi WHERE lokasi_destinasi = 'Yogyakarta' ORDER BY id_destinasi DESC LIMIT 3");
           while ($row = mysqli_fetch_assoc($query)){
             echo "<div class='col-sm-6 col-md-4'>";
             echo "<div class='thumbnail'>";
-            echo "<img src='pict/".$row['image_destinasi']."' alt='' class='img-responsive'>";
+            echo "<img src='../pict/".$row['image_destinasi']."' alt='' class='img-responsive'>";
             echo "<div class='caption'>";
             echo "<h3 class=''>".$row['nama_destinasi']."</h3>";
             echo "<p>".$row['description']."</p>";
@@ -63,13 +63,18 @@
           echo "</div>";
           }
         ?>
+        <div class="btn-toolbar text-center">
+        <div class="add">
+          <a href="form_input_data_destination.php" role="button" class="btn btn-success">More ...</a>
+        </div>
+      </div>
     <h1>Gunung Kidul</h1>
       <?php
-          $query = mysqli_query($kon,"SELECT * FROM destinasi WHERE lokasi_destinasi = 'Gunung Kidul'");
+          $query = mysqli_query($kon,"SELECT * FROM destinasi WHERE lokasi_destinasi = 'Gunung Kidul'ORDER BY id_destinasi LIMIT 3");
           while ($row = mysqli_fetch_assoc($query)){
             echo "<div class='col-sm-6 col-md-4'>";
             echo "<div class='thumbnail'>";
-            echo "<img src='pict/".$row['image_destinasi']."' alt='' class='img-responsive'>";
+            echo "<img src='../pict/".$row['image_destinasi']."' alt='' class='img-responsive'>";
             echo "<div class='caption'>";
             echo "<h3 class=''>".$row['nama_destinasi']."</h3>";
             echo "<p>".$row['description']."</p>";
@@ -81,13 +86,18 @@
           echo "</div>";
           }
         ?>
+        <div class="btn-toolbar text-center">
+        <div class="add">
+          <a href="form_input_data_destination.php" role="button" class="btn btn-success">More ...</a>
+        </div>
+      </div>
       <h1>Kulon Progo</h1>
       <?php
-          $query = mysqli_query($kon,"SELECT * FROM destinasi WHERE lokasi_destinasi = 'Gunung Kidul'");
+          $query = mysqli_query($kon,"SELECT * FROM destinasi WHERE lokasi_destinasi = 'Kulon Progo' ORDER BY id_destinasi LIMIT 3");
           while ($row = mysqli_fetch_assoc($query)){
             echo "<div class='col-sm-6 col-md-4'>";
             echo "<div class='thumbnail'>";
-            echo "<img src='pict/".$row['image_destinasi']."' alt='' class='img-responsive'>";
+            echo "<img src='../pict/".$row['image_destinasi']."' alt='' class='img-responsive'>";
             echo "<div class='caption'>";
             echo "<h3 class=''>".$row['nama_destinasi']."</h3>";
             echo "<p>".$row['description']."</p>";
@@ -99,13 +109,18 @@
           echo "</div>";
           }
         ?>
+        <div class="btn-toolbar text-center">
+        <div class="add">
+          <a href="form_input_data_destination.php" role="button" class="btn btn-success">More ...</a>
+        </div>
+      </div>
       <h1>Bantul</h1>
       <?php
-          $query = mysqli_query($kon,"SELECT * FROM destinasi WHERE lokasi_destinasi = 'Gunung Kidul'");
+          $query = mysqli_query($kon,"SELECT * FROM destinasi WHERE lokasi_destinasi = 'Bantul' ORDER BY id_destinasi LIMIT 3");
           while ($row = mysqli_fetch_assoc($query)){
             echo "<div class='col-sm-6 col-md-4'>";
             echo "<div class='thumbnail'>";
-            echo "<img src='pict/".$row['image_destinasi']."' alt='' class='img-responsive'>";
+            echo "<img src='../pict/".$row['image_destinasi']."' alt='' class='img-responsive'>";
             echo "<div class='caption'>";
             echo "<h3 class=''>".$row['nama_destinasi']."</h3>";
             echo "<p>".$row['description']."</p>";
@@ -117,13 +132,18 @@
           echo "</div>";
           }
         ?>
+        <div class="btn-toolbar text-center">
+        <div class="add">
+          <a href="form_input_data_destination.php" role="button" class="btn btn-success">More ...</a>
+        </div>
+      </div>
       <h1>Sleman</h1>
       <?php
-          $query = mysqli_query($kon,"SELECT * FROM destinasi WHERE lokasi_destinasi = 'Gunung Kidul'");
+          $query = mysqli_query($kon,"SELECT * FROM destinasi WHERE lokasi_destinasi = 'Sleman' ORDER BY id_destinasi LIMIT 3");
           while ($row = mysqli_fetch_assoc($query)){
             echo "<div class='col-sm-6 col-md-4'>";
             echo "<div class='thumbnail'>";
-            echo "<img src='pict/".$row['image_destinasi']."' alt='' class='img-responsive'>";
+            echo "<img src='../pict/".$row['image_destinasi']."' alt='' class='img-responsive'>";
             echo "<div class='caption'>";
             echo "<h3 class=''>".$row['nama_destinasi']."</h3>";
             echo "<p>".$row['description']."</p>";
@@ -135,6 +155,12 @@
           echo "</div>";
           }
         ?>
+        <div class="btn-toolbar text-center">
+        <div class="add">
+          <a href="form_input_data_destination.php" role="button" class="btn btn-success">More ...</a>
+        </div>
+      </div>
+        </div>
     <!-- Footer -->
     <?php
       include "../footer.html";

@@ -12,7 +12,7 @@
 	$type = $_FILES['foto']['type'];
 	$maxsize = 2500000;
 	$typeYgBoleh = array("image/jpeg","image/png","image/pjpeg");
-	$dirFoto = "pict";
+	$dirFoto = "../pict";
 	if (!is_dir($dirFoto))
 	mkdir($dirFoto);
 	$fileTujuanFoto = $dirFoto."/".$foto;

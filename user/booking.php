@@ -1,94 +1,64 @@
-<?php
-include "../koneksi.php";
-$idmobil = $_GET["idmobil"];
-$sql = "select * from mobil where idmobil = '$idmobil'";
-$hasil = mysqli_query($kon,$sql);
-if (!$hasil) die ("Gagal query. . .");
-$plat="";
-$data = mysqli_fetch_array($hasil);
-$plat = $data["noplat"];
-$nama = $data["nama"];
-?>
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Akakom Travel</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Bootstrap -->
+    <link href="../css/bootstrap.css" rel="stylesheet">
+    
+    <!--Google Fonts-->
+    <link href='http://fonts.googleapis.com/css?family=Belgrano|Courgette&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
+
+    
+    <!--Bootshape-->
+    <link href="../css/bootshape.css" rel="stylesheet">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+    <![endif]-->
+  </head>
 <body>
-<h2 align="center"> === SEWA MOBIL === </h2>
-<form action="sewa_simpan.php" method="post" enctype="multipart/form-data">
+<?php 
+   include "navbar.html"; 
+   ?>
+<?php
+	include "../koneksi.php";
+	$sql = "select * from paket_tour";
+	$hasil = mysqli_query($kon, $sql);
+	if(!$hasil)
+		die("Gagal query..".mysqli_error($kon));
+?>
 
-<table align="center" cellpadding="10" cellspacing="5">
-
-<tr>
-	<td>Nama Penyewa</td>
-	<td><input type="text" name="namasewa" /></td>
-</tr>
-<tr>
-	<td>Alamat</td>
-	<td><textarea cols="20" rows="5" name="alamat"></textarea></td>
-</tr>
-<tr>
-	<td>Tanggal Sewa</td>
-	<td>
-		<select name="tglsewa">
-		<?php
-			$bulan = date("M");
-			$tahun = date("Y");
-			for ($hari=1; $hari<=31 ; $hari++) {
-			$htgl = str_pad($hari,2,"0",STR_PAD_LEFT);
-			echo "<option value='$htgl/$bulan/$tahun'>$htgl /$bulan /$tahun</option>";
-			echo "";
-
+<h2>Daftar Paket Tour</h2><br><hr>
+&nbsp; &nbsp; &nbsp;
+<table border="1" align="center">
+	<tr>
+		<th width="100">Nama Paket Tour</th>
+		<th width="100">Destinasi</th>
+		<th width="100">Description</th>
+		<th width="100">Harga</th>
+		<th width="100"></th>
+	</tr>
+	<?php
+		$no = 0;
+		while ($row = mysqli_fetch_assoc($hasil))
+		{
+			echo " <tr>" ;
+			echo " 	<td>".$row['nama_paket']." </td> ";
+			echo "	<td>".$row['destinasi']." </td> ";
+			echo "	<td>".$row['description']." </td> ";
+			echo " 	<td>".$row['harga_paket']." </td> ";
+			echo "	<td> ";
+			echo "	<a href='form_booking.php'>Book Now</a>";
+			echo "	</td>";
+			echo " </tr>" ;
 		}
-		?>
-		</select>
-	</td>
-</tr>
-<tr>
-	<td>Durasi Sewa</td>
-	<td><input type="text" name="durasi">/hari</td>
-</tr>
-<tr>
-	<td>No. Telp</td>
-	<td><input type="text" name="notelp"></td>
-</tr>
-<tr>
-	<td>Foto KTP</td>
-	<td><input type="file" name="foto"></td>
-</tr>
-<tr>
-	<td colspan="2" align="center">
-	<input type="submit" value="Simpan" name="proses"/>
-	<input type="reset" value="Reset" name="reset"/>
-	<input type="button" value="Cancel" onclick="self.history.back()">
-	</td>
-</tr>
+	?>
 </table>
-<br>
-<table align="center" cellspacing="5" cellpadding="3">
-<tr>
-	<td>No Plat</td>
-	<td><input type="text" name="plat" readonly value="<?php 
-	$idmobil = $_GET["idmobil"];
-	// include "../koneksi.php";
-	$sql = "select * from mobil where idmobil = '$idmobil'";
-	$hasil = mysqli_query($kon,$sql);
-	if (!$hasil) die ("Gagal query. . .");
-	$plat="";
-	$data = mysqli_fetch_array($hasil);
-	$plat = $data["noplat"];
-	echo $plat;?>" /></td>
-</tr>
-<tr>
-	<td>Nama Mobil</td>
-	<td><input type="text" name="namamobil" readonly
-		 value="<?php 
-	$idmobil = $_GET["idmobil"];
-	// include "../koneksi.php";
-	$sql = "select * from mobil where idmobil = '$idmobil'";
-	$hasil = mysqli_query($kon,$sql);
-	if (!$hasil) die ("Gagal query. . .");
-	$nama="";
-	$data = mysqli_fetch_array($hasil);
-	$nama = $data["nama"];
-	echo $nama;?>"/></td>
-</tr>
-</table>
-</form>
-</body>
+
+	</body>
