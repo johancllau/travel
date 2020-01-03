@@ -23,43 +23,34 @@
 <body>
 	<h3 align="center">Form Input Data Destinasi</h3>
 	<br/>
-	<form = name="form-Daftar" action="save_destination.php" method="post" enctype="multipart/form-data">
+	<form = name="form-Daftar" action="save_travell.php" method="post" enctype="multipart/form-data">
 		<table border="0" align="center" cellpadding="10">
 			<tr>
-				<td><label for="Nama">Nama</label></td>
-				<td><input type="text" name="nama" id="Nama" placeholder="Nama"></td>
-			</tr>
-			<tr>
-				<td><label for="Lokasi">Lokasi</label></td>
-				<td><select name="lokasi">
+				<td><label for="Kapasitas">Kapasitas</label></td>
+				<td><select name="kapasitas" id="Kapasitas">
 					<option value="">Select...</option>
-					<option value="Yogyakarta">Yogyakarta</option>
-					<option value="Gunung Kidul">Gunung Kidul</option>
-					<option value="Kulon Progo">Kulon Progo</option>
-					<option value="Bantul">Bantul</option>
-					<option value="Sleman">Sleman</option>
+					<option value="1">1 Penumpang</option>
+					<option value="2">2 Penumpang</option>
+					<option value="3">3 Penumpang</option>
+					<option value="4">4 Penumpang</option>
+					<option value="5">5 Penumpang</option>
+					<option value="6">6 Penumpang</option>
+					<option value="7">7 Penumpang</option>
+					<option value="8">8 Penumpang</option>
+					<option value="9">9 Penumpang</option>
+					<option value="10">10 Penumpang</option>
 			 	</select></td>
-			</tr>
-			<tr>
-				<td><label for="Alamat">Alamat</label></td>
-				<td><input type="text" name="alamat" id="Alamat" placeholder="Alamat"></td>
 			</tr>
 			<tr>
 				<td><label for="Foto">Foto</label></td>
 				<td><input type="file" name="foto" id="Foto"/></td>
 			</tr>
-			<tr>
-				<td><label for="Description">Description</label></td>
-				<td>
-					<textarea maxlength="1000" placeholder="Description" id="Description" name="description">
-					</textarea>
-				</td>
-			</tr>
+
 			<tr>
 				<td colspan="2" align="center">
-					<input type="submit" name="submit" value="Submit" align="center" class="btn btn-primary">
-					<input type="reset" name="reset" value="Reset" align="center" class="btn btn-success">
 					<input type="button" name="cancel" value="Cancel" align="center" onclick="self.history.back()" class="btn btn-danger">
+					<input type="reset" name="reset" value="Reset" align="center" class="btn btn-success">
+					<input type="submit" name="submit" value="Submit" align="center" class="btn btn-primary">
 				</td>
 			</tr>
 		</table>

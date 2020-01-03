@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.9.0.1
+-- version 4.8.0
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jan 03, 2020 at 07:18 AM
--- Server version: 10.4.6-MariaDB
--- PHP Version: 7.3.9
+-- Generation Time: Jan 03, 2020 at 09:02 PM
+-- Server version: 10.1.31-MariaDB
+-- PHP Version: 7.2.4
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -31,8 +31,19 @@ SET time_zone = "+00:00";
 CREATE TABLE `booking` (
   `kode_booking` int(11) NOT NULL,
   `tanggal_tour` varchar(20) NOT NULL,
-  `username` varchar(100) NOT NULL,
-  `id_paket` int(11) NOT NULL
+  `username` varchar(100) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `daftar_paket_tour`
+--
+
+CREATE TABLE `daftar_paket_tour` (
+  `id_paket_tour` int(11) NOT NULL,
+  `id_destinasi` int(11) NOT NULL,
+  `kode_daftar_paket_tour` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
@@ -61,7 +72,8 @@ INSERT INTO `destinasi` (`id_destinasi`, `nama_destinasi`, `lokasi_destinasi`, `
 (5, 'Pantai Siung', 'Gunung Kidul', 'Kec. Bumi sari natar, tepatnya berada di Dusun Duwet, Kelurahan Purwodadi, Kecamatan Tepus, Kabupate', 'pantai siung.jpg', 'Pantai nya enak, banyak air laut'),
 (8, 'Pantai Pok Tunggal ', 'Gunung Kidul', 'Jalan Pantai pok Tunggal', 'pantai-pok-tunggal.jpg', 'ini pantai bos		'),
 (12, 'Taman Pintar', 'Yogyakarta', 'Jalan Panembahan Senopati No. 1-3, Yogyakarta, Daerah Istimewa Yogyakarta 55122', 'TamanPintar.jpg', '		taman goblok			'),
-(13, 'Taman Sari', 'Yogyakarta', 'Jalan Panembahan Senopati No. 1-3, Yogyakarta, Daerah Istimewa Yogyakarta 55122', 'tamansari.jpg', '			Ini Taman		');
+(13, 'Taman Sari', 'Yogyakarta', 'Jalan Panembahan Senopati No. 1-3, Yogyakarta, Daerah Istimewa Yogyakarta 55122', 'tamansari.jpg', '			Ini Taman		'),
+(14, 'Taman Ketandan', 'Bantul', 'Jln Gedong Kuning 254B, Bantul, DIY, Indonesia, Bumi', 'elementary.jpg', 'Taman Ketandan Adalah Taman Yang Sangat Baik Untuk Yang Mantap-Mantap					');
 
 -- --------------------------------------------------------
 
@@ -80,7 +92,18 @@ CREATE TABLE `mobil_travel` (
 --
 
 INSERT INTO `mobil_travel` (`kode_travell`, `kapasitas`, `image_travell`) VALUES
-(1, 8, 'mobil.jpg');
+(6, 8, 'travel_1.jfif'),
+(7, 6, 'travel_2.jfif'),
+(8, 4, 'travel_3.jfif'),
+(9, 3, 'travel_5.jfif'),
+(10, 6, 'travel_4.jfif'),
+(11, 5, 'travel_7.jfif'),
+(12, 8, 'travel_6.jfif'),
+(13, 9, 'travel_8.jfif'),
+(14, 10, 'travel_10.jfif'),
+(15, 10, 'travel_9.jfif'),
+(16, 2, 'travel_11.jfif'),
+(17, 1, 'travel_12.jfif');
 
 -- --------------------------------------------------------
 
@@ -89,20 +112,12 @@ INSERT INTO `mobil_travel` (`kode_travell`, `kapasitas`, `image_travell`) VALUES
 --
 
 CREATE TABLE `paket_tour` (
-  `id_paket` int(11) NOT NULL,
+  `id_paket_tour` int(11) NOT NULL,
   `nama_paket` varchar(100) NOT NULL,
   `harga_paket` int(11) NOT NULL,
-  `destinasi` varchar(255) NOT NULL,
   `description` varchar(255) NOT NULL,
   `kode_travel` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
---
--- Dumping data for table `paket_tour`
---
-
-INSERT INTO `paket_tour` (`id_paket`, `nama_paket`, `harga_paket`, `destinasi`, `description`, `kode_travel`) VALUES
-(1, 'Yogyakarta Seharian', 500000, 'Taman Sari, Taman Ketandan, Malioboro', 'blablabla', 1);
 
 -- --------------------------------------------------------
 
@@ -116,7 +131,7 @@ CREATE TABLE `user` (
   `name` varchar(100) NOT NULL,
   `email` varchar(255) NOT NULL,
   `gender` enum('pria','wanita') NOT NULL,
-  `notelp` int(12) NOT NULL,
+  `notelp` char(12) NOT NULL,
   `address` varchar(100) NOT NULL,
   `status` enum('0','1') NOT NULL DEFAULT '0'
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
@@ -126,8 +141,9 @@ CREATE TABLE `user` (
 --
 
 INSERT INTO `user` (`username`, `password`, `name`, `email`, `gender`, `notelp`, `address`, `status`) VALUES
-('Admin', 'admin123', 'johan cllau', 'cllaujhohan@gmail.com', 'pria', 2147483647, 'janti', '1'),
-('Galang krsnt', 'galang123', 'Galang Krisnanto', 'Galangkrsnt@gmail.com', 'pria', 2147483647, 'bantul', '0');
+('Admin', 'admin123', 'johan cllau', 'cllaujhohan@gmail.com', 'pria', '082237064375', 'jln garuda no 252A kepanjeng, banguntapan, bantul, DIY, Indonesia, Bumi.', '1'),
+('Dhany', 'Dhany123', 'Aisyiyah Dhani', 'Dhnay@gmail.com', 'pria', '089538925260', 'jln bantul 265B km 16, Bantul, DIY, Indonesia, Bumi.					', '0'),
+('Galang krsnt', 'galang123', 'Galang Krisnanto', 'Galangkrsnt@gmail.com', 'pria', '082237064375', 'jln merdeka 205A, Bantul, DIY, Indonesia, Bumi																													', '0');
 
 --
 -- Indexes for dumped tables
@@ -137,9 +153,15 @@ INSERT INTO `user` (`username`, `password`, `name`, `email`, `gender`, `notelp`,
 -- Indexes for table `booking`
 --
 ALTER TABLE `booking`
-  ADD PRIMARY KEY (`kode_booking`),
-  ADD KEY `username` (`username`),
-  ADD KEY `id_paket` (`id_paket`);
+  ADD PRIMARY KEY (`kode_booking`);
+
+--
+-- Indexes for table `daftar_paket_tour`
+--
+ALTER TABLE `daftar_paket_tour`
+  ADD PRIMARY KEY (`kode_daftar_paket_tour`),
+  ADD KEY `id_paket_tour` (`id_paket_tour`),
+  ADD KEY `id_destinasi` (`id_destinasi`);
 
 --
 -- Indexes for table `destinasi`
@@ -157,7 +179,7 @@ ALTER TABLE `mobil_travel`
 -- Indexes for table `paket_tour`
 --
 ALTER TABLE `paket_tour`
-  ADD PRIMARY KEY (`id_paket`),
+  ADD PRIMARY KEY (`id_paket_tour`),
   ADD KEY `kode_travell` (`kode_travel`);
 
 --
@@ -177,33 +199,39 @@ ALTER TABLE `booking`
   MODIFY `kode_booking` int(11) NOT NULL AUTO_INCREMENT;
 
 --
+-- AUTO_INCREMENT for table `daftar_paket_tour`
+--
+ALTER TABLE `daftar_paket_tour`
+  MODIFY `kode_daftar_paket_tour` int(11) NOT NULL AUTO_INCREMENT;
+
+--
 -- AUTO_INCREMENT for table `destinasi`
 --
 ALTER TABLE `destinasi`
-  MODIFY `id_destinasi` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
+  MODIFY `id_destinasi` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
 
 --
 -- AUTO_INCREMENT for table `mobil_travel`
 --
 ALTER TABLE `mobil_travel`
-  MODIFY `kode_travell` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `kode_travell` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
 
 --
 -- AUTO_INCREMENT for table `paket_tour`
 --
 ALTER TABLE `paket_tour`
-  MODIFY `id_paket` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id_paket_tour` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- Constraints for dumped tables
 --
 
 --
--- Constraints for table `booking`
+-- Constraints for table `daftar_paket_tour`
 --
-ALTER TABLE `booking`
-  ADD CONSTRAINT `booking_ibfk_1` FOREIGN KEY (`username`) REFERENCES `user` (`username`),
-  ADD CONSTRAINT `booking_ibfk_2` FOREIGN KEY (`id_paket`) REFERENCES `paket_tour` (`id_paket`);
+ALTER TABLE `daftar_paket_tour`
+  ADD CONSTRAINT `daftar_paket_tour_ibfk_1` FOREIGN KEY (`id_paket_tour`) REFERENCES `paket_tour` (`id_paket_tour`),
+  ADD CONSTRAINT `daftar_paket_tour_ibfk_2` FOREIGN KEY (`id_destinasi`) REFERENCES `destinasi` (`id_destinasi`);
 
 --
 -- Constraints for table `paket_tour`

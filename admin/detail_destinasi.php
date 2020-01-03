@@ -4,14 +4,14 @@
     <title>Akakom Travel</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- Bootstrap -->
-    <link href="css/bootstrap.css" rel="stylesheet">
+    <link href="../css/bootstrap.css" rel="stylesheet">
     
     <!--Google Fonts-->
     <link href='http://fonts.googleapis.com/css?family=Belgrano|Courgette&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
 
     
     <!--Bootshape-->
-    <link href="css/bootshape.css" rel="stylesheet">
+    <link href="../css/bootshape.css" rel="stylesheet">
 
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -24,7 +24,7 @@
    <?php 
       include "navbar.html";
       $id_destinasi = $_GET['id_destinasi'];
-      include "koneksi.php";
+      include "../koneksi.php";
       $query = mysqli_query($kon, "SELECT * FROM destinasi WHERE id_destinasi='$id_destinasi'");
 
       $nama   = "";
@@ -56,21 +56,21 @@
           <div class="carousel-inner">
             <div class="item active">
               <?php 
-                  echo " <img src='pict/".$images."' alt=''>";
+                  echo " <img src='../pict/".$images."' alt=''>";
               ?>
               <div class="carousel-caption">
               </div>
             </div>
             <div class="item">
               <?php 
-                echo " <img src='pict/".$images."' alt=''>";
+                echo " <img src='../pict/".$images."' alt=''>";
               ?>
               <div class="carousel-caption">
               </div>
             </div>
             <div class="item">
               <?php 
-                echo " <img src='pict/".$images."' alt=''>";
+                echo " <img src='../pict/".$images."' alt=''>";
               ?>
               <div class="carousel-caption">
               </div>
@@ -109,13 +109,13 @@
 
     <!-- Footer -->
     <?php
-      include "footer.html";
+      include "../footer.html";
     ?>
 
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-    <script src="js/jquery.js"></script>
+    <script src="../js/jquery.js"></script>
     <!-- Include all compiled plugins (below), or include individual files as needed -->
-    <script src="js/bootstrap.min.js"></script>
-    <script src="js/bootshape.js"></script>
+    <script src="../js/bootstrap.min.js"></script>
+    <script src="../js/bootshape.js"></script>
   </body>
 </html>
