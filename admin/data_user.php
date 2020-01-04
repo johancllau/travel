@@ -72,7 +72,7 @@
                 <td align='center'>".$row['notelp']."</td>
                 <td align='center'>".$row['address']."</td>
                 <td align='center'>".$status."</td>
-                <td align='center'><a href='form_edit_data_user.php?username=".$row['username']."'>Edit</a><br/><a href=''>Hapus</a></td>
+                <td align='center'><a href='form_edit_data_user.php?username=".$row['username']."'>Edit</a><br/><a href='hapus_user.php?username=".$row['username']."'>Hapus</a></td>
               </tr>
             ";
       }

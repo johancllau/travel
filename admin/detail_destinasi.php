@@ -33,11 +33,11 @@
       $images = "";
       $desc   = "";
       while ($row = mysqli_fetch_assoc($query)) {
-        $nama = $row['nama_destinasi'];
+        $nama   = $row['nama_destinasi'];
         $lokasi = $row['lokasi_destinasi'];
         $alamat = $row['alamat_destinasi'];
         $images = $row['image_destinasi'];
-        $desc = $row['description'];
+        $desc   = $row['description'];
       }
    ?>
     <!-- Slide gallery -->
@@ -55,23 +55,17 @@
 
           <div class="carousel-inner">
             <div class="item active">
-              <?php 
-                  echo " <img src='../pict/".$images."' alt=''>";
-              ?>
+              <?= " <img src='../pict/".$images."' alt=''>" ?>
               <div class="carousel-caption">
               </div>
             </div>
             <div class="item">
-              <?php 
-                echo " <img src='../pict/".$images."' alt=''>";
-              ?>
+              <?= " <img src='../pict/".$images."' alt=''>" ?>
               <div class="carousel-caption">
               </div>
             </div>
             <div class="item">
-              <?php 
-                echo " <img src='../pict/".$images."' alt=''>";
-              ?>
+              <?= " <img src='../pict/".$images."' alt=''>" ?>
               <div class="carousel-caption">
               </div>
             </div>
@@ -89,12 +83,23 @@
       </div><!-- End Slide gallery -->
     </div>
 
+    <div class="btn-toolbar text-center">
+      <div class="add">
+        <a href="hapus_destinasi.php?id_destinasi=<?= $id_destinasi ?>" role="button" class="btn btn-success">Hapus Destinations</a>
+      </div>
+      <div class="add">
+        <a href="form_edit_data_destination.php?id_destinasi=<?= $id_destinasi ?>" role="button" class="btn btn-success">Edit Destinations</a>
+      </div>
+    </div>
+
+
+
     <div class="container thumbs">
     <h3>
-      <?php echo $nama; ?>
+      <?= $nama ?>
     </h3>
     <h4>
-      <?php echo "Lokasi: ".$lokasi; ?>
+      <?= "Lokasi: ".$lokasi; ?>
     </h4>
     <h4>
       <?php 
@@ -103,7 +108,7 @@
       ?>
     </h4>
      <h4>
-      <?php echo "Alamat: ".$alamat; ?>
+      <?= "Alamat: ".$alamat; ?>
     </h4>
   </div>
 

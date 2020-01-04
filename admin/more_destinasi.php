@@ -33,8 +33,10 @@
 
     <!-- Thumbnails -->
     <div class="search">
-      <input type="text" placeholder="Search.." name="search">
-      <button type="submit"><i class="fa fa-search"></i></button>
+      <form = name="form_search_destinasi" action="#" method="post">
+        <input type="text" placeholder="Search.." name="nama_destinasi">
+        <button type="submit" name="searching" value="cari"><i class="fa fa-search"></i></button>
+      </form>
     </div>
 
     <div class="btn-toolbar text-center">
@@ -66,6 +68,29 @@
             ";
       }
   ?>
+
+  <?php 
+    if (isset($_POST['searching']) && !empty($_POST['searching'])) {
+      $nama = $_POST['nama_destinasi'];
+      $query = mysqli_query($kon, "SELECT * FROM destinasi WHERE nama_destinasi LIKE '%$nama%' ORDER BY id_destinasi");
+      while ($row = mysqli_fetch_assoc($query)) {
+        echo "
+            <div class='col-sm-6 col-md-4'>
+              <div class='thumbnail'>
+                <img src='../pict/".$row['image_destinasi']."' alt='' class='img-responsive'>
+                <div class='caption'>
+                  <h3 class=''>".$row['nama_destinasi']."</h3>
+                  <p>".$row['description']."</p>
+                  <div class='btn-toolbar text-center'>
+                    <a href='detail_destinasi.php?id_destinasi=".$row['id_destinasi']."' role='button' class='btn btn-primary pull-right'>Details</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+            ";
+      }
+    }
+?>
 
 </div>
     <!-- Footer -->

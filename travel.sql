@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jan 03, 2020 at 09:02 PM
+-- Generation Time: Jan 04, 2020 at 03:12 PM
 -- Server version: 10.1.31-MariaDB
 -- PHP Version: 7.2.4
 
@@ -37,18 +37,6 @@ CREATE TABLE `booking` (
 -- --------------------------------------------------------
 
 --
--- Table structure for table `daftar_paket_tour`
---
-
-CREATE TABLE `daftar_paket_tour` (
-  `id_paket_tour` int(11) NOT NULL,
-  `id_destinasi` int(11) NOT NULL,
-  `kode_daftar_paket_tour` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
--- --------------------------------------------------------
-
---
 -- Table structure for table `destinasi`
 --
 
@@ -66,14 +54,19 @@ CREATE TABLE `destinasi` (
 --
 
 INSERT INTO `destinasi` (`id_destinasi`, `nama_destinasi`, `lokasi_destinasi`, `alamat_destinasi`, `image_destinasi`, `description`) VALUES
-(2, 'Jalan Malioboro', 'Yogyakarta', 'Jalan malioboro', 'malioboro.jpg', 'tempat jalan sobat ambyar				'),
-(3, 'Alun Alun Kidul', 'Yogyakarta', 'Alun-Alun Kidul St, Patehan, Kraton, Yogyakarta City, Special Region of Yogyakarta 55133', 'alun-alunKidul.jpg', 'Tempat nongki santuy gaming stay classy		'),
-(4, 'Air Terjun Sri Getuk', 'Gunung Kidul', 'Desa Bleberan, Kecamatan Playen, Kabupaten Gunungkidul, Yogyakarta', 'Air-Terjun-Sri-Gethuk.jpg', 'Yah air terjun, bodo amat dah			'),
-(5, 'Pantai Siung', 'Gunung Kidul', 'Kec. Bumi sari natar, tepatnya berada di Dusun Duwet, Kelurahan Purwodadi, Kecamatan Tepus, Kabupate', 'pantai siung.jpg', 'Pantai nya enak, banyak air laut'),
-(8, 'Pantai Pok Tunggal ', 'Gunung Kidul', 'Jalan Pantai pok Tunggal', 'pantai-pok-tunggal.jpg', 'ini pantai bos		'),
+(2, 'Jalan Malioboro', 'Yogyakarta', '						Jalan malioboro					', 'malioboro.jpg', '						tempat jalan sobat ambyar									'),
+(3, 'Alun Alun Kidul', 'Yogyakarta', '						Alun-Alun Kidul St, Patehan, Kraton, Yogyakarta City, Special Region of Yogyakarta 55133					', 'alun-alunKidul.jpg', '						Tempat nongki santuy gaming stay classy							'),
+(4, 'Air Tidur', 'Gunung Kidul', '						Desa Bleberan, Kecamatan Playen, Kabupaten Gunungkidul, Yogyakarta					', 'kraton-jogja.jpg', '						Yah air terjun, bodo amat dah								'),
+(5, 'Pantai Siung', 'Gunung Kidul', '						Kec. Bumi sari natar, tepatnya berada di Dusun Duwet, Kelurahan Purwodadi, Kecamatan Tepus, Ka', 'Air-Terjun-Sri-Gethuk.jpg', '						Pantai nya enak, banyak air laut					'),
+(8, 'Pantai Pok Tunggal ', 'Gunung Kidul', '						Jalan Pantai pok Tunggal					', 'TamanPintar.jpg', '						ini pantai bos							'),
 (12, 'Taman Pintar', 'Yogyakarta', 'Jalan Panembahan Senopati No. 1-3, Yogyakarta, Daerah Istimewa Yogyakarta 55122', 'TamanPintar.jpg', '		taman goblok			'),
-(13, 'Taman Sari', 'Yogyakarta', 'Jalan Panembahan Senopati No. 1-3, Yogyakarta, Daerah Istimewa Yogyakarta 55122', 'tamansari.jpg', '			Ini Taman		'),
-(14, 'Taman Ketandan', 'Bantul', 'Jln Gedong Kuning 254B, Bantul, DIY, Indonesia, Bumi', 'elementary.jpg', 'Taman Ketandan Adalah Taman Yang Sangat Baik Untuk Yang Mantap-Mantap					');
+(15, 'Pantai Baru', 'Gunung Kidul', '												Jln Gedong Kuning 254B, Bantul, DIY, Indonesia, Bumi										', 'Air-Terjun-Sri-Gethuk.jpg', '						Pantai ini sangat bagus dikunjungi karena memiliki view yang sangat bagus dan menghangatkan badan. Pantai ini juga terkenal dengan keindahan alam yang sangat mempesona.														'),
+(16, 'Air Terjun Matrix', 'Sleman', '												Jln Gedong Kuning 254B, Bantul, DIY, Indonesia, Bumi										', 'bunker-kaliadem.jpg', 'Bunker KaliAdem ini memang adem, karena lokasinya yang sangat berdekat denganm Gunug  Merapi yang ada di DIY.														'),
+(17, 'Gunung Kembar', 'Bantul', 'Jln Gedong Kuning 254B, Bantul, DIY, Indonesia, Bumi', 'Sindu-Kusuma-Edupark.jpg', 'Ini Merupakan Gunung Kembar yang memikat hati para pria					'),
+(18, 'JogjaBuy', 'Bantul', 'Jln Gedong Kuning 254B, Bantul, DIY, Indonesia, Bumi', 'jogja-bay.jpg', 'JogjaBay adalah tempat untum mantap-mantap dan enak-enak!!					'),
+(19, 'JogjaTronik', 'Bantul', 'Jln Gedong Kuning 254B, Bantul, DIY, Indonesia, Bumi', 'Ratuboko.jpg', 'JogjaBay adalah tempat untum mantap-mantap dan enak-enak!!										'),
+(20, 'Candi Prambanan', 'Sleman', 'Jln Gedong Kuning 254B, Bantul, DIY, Indonesia, Bumi', 'candi-prambanan.jpg', 'Candi ini merupakan Candi, dimana candi itu sendiri merupakan candi dan juga candi					'),
+(21, 'Ratu Boko', 'Sleman', 'Jln Gedong Kuning 254B, Bantul, DIY, Indonesia, Bumi', 'Ratuboko.jpg', 'Ratu Boko merupakan tempat untuk Ratu Boko itu sendiri dan keluarganya.					');
 
 -- --------------------------------------------------------
 
@@ -116,8 +109,18 @@ CREATE TABLE `paket_tour` (
   `nama_paket` varchar(100) NOT NULL,
   `harga_paket` int(11) NOT NULL,
   `description` varchar(255) NOT NULL,
-  `kode_travel` int(11) NOT NULL
+  `id_destinasi` int(11) NOT NULL,
+  `kode_travell` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `paket_tour`
+--
+
+INSERT INTO `paket_tour` (`id_paket_tour`, `nama_paket`, `harga_paket`, `description`, `id_destinasi`, `kode_travell`) VALUES
+(1, 'paket cinta', 2000000, 'Paket untuk bercinta semalam tanpa merugikan orang lain', 18, 16),
+(3, 'Paket Cuman di Lihat Tanpa Menyentu', 10000, 'Paket yang sangat tidak cocok untuk anda					', 3, 17),
+(4, 'Paket Selingkuh Semalam', 700000, 'Selingkuh terjamin aman tanpa ribet 					', 17, 11);
 
 -- --------------------------------------------------------
 
@@ -156,14 +159,6 @@ ALTER TABLE `booking`
   ADD PRIMARY KEY (`kode_booking`);
 
 --
--- Indexes for table `daftar_paket_tour`
---
-ALTER TABLE `daftar_paket_tour`
-  ADD PRIMARY KEY (`kode_daftar_paket_tour`),
-  ADD KEY `id_paket_tour` (`id_paket_tour`),
-  ADD KEY `id_destinasi` (`id_destinasi`);
-
---
 -- Indexes for table `destinasi`
 --
 ALTER TABLE `destinasi`
@@ -180,7 +175,8 @@ ALTER TABLE `mobil_travel`
 --
 ALTER TABLE `paket_tour`
   ADD PRIMARY KEY (`id_paket_tour`),
-  ADD KEY `kode_travell` (`kode_travel`);
+  ADD KEY `id_destinasi` (`id_destinasi`),
+  ADD KEY `kode_travell` (`kode_travell`);
 
 --
 -- Indexes for table `user`
@@ -199,16 +195,10 @@ ALTER TABLE `booking`
   MODIFY `kode_booking` int(11) NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT for table `daftar_paket_tour`
---
-ALTER TABLE `daftar_paket_tour`
-  MODIFY `kode_daftar_paket_tour` int(11) NOT NULL AUTO_INCREMENT;
-
---
 -- AUTO_INCREMENT for table `destinasi`
 --
 ALTER TABLE `destinasi`
-  MODIFY `id_destinasi` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
+  MODIFY `id_destinasi` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=22;
 
 --
 -- AUTO_INCREMENT for table `mobil_travel`
@@ -220,24 +210,18 @@ ALTER TABLE `mobil_travel`
 -- AUTO_INCREMENT for table `paket_tour`
 --
 ALTER TABLE `paket_tour`
-  MODIFY `id_paket_tour` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id_paket_tour` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- Constraints for dumped tables
 --
 
 --
--- Constraints for table `daftar_paket_tour`
---
-ALTER TABLE `daftar_paket_tour`
-  ADD CONSTRAINT `daftar_paket_tour_ibfk_1` FOREIGN KEY (`id_paket_tour`) REFERENCES `paket_tour` (`id_paket_tour`),
-  ADD CONSTRAINT `daftar_paket_tour_ibfk_2` FOREIGN KEY (`id_destinasi`) REFERENCES `destinasi` (`id_destinasi`);
-
---
 -- Constraints for table `paket_tour`
 --
 ALTER TABLE `paket_tour`
-  ADD CONSTRAINT `paket_tour_ibfk_2` FOREIGN KEY (`kode_travel`) REFERENCES `mobil_travel` (`kode_travell`);
+  ADD CONSTRAINT `paket_tour_ibfk_1` FOREIGN KEY (`id_destinasi`) REFERENCES `destinasi` (`id_destinasi`),
+  ADD CONSTRAINT `paket_tour_ibfk_2` FOREIGN KEY (`kode_travell`) REFERENCES `mobil_travel` (`kode_travell`);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

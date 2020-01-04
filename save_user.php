@@ -116,7 +116,7 @@
                 return;
          }
          else {
-            echo '<script language="javascript">alert("Pendaftaran Berhasil.  Silahkan Melakukan Login!!"); document.location="form_login.html";</script>';
+            echo '<script language="javascript">alert("Pendaftaran Berhasil. Silahkan Melakukan Login!!"); document.location="form_login.html";</script>';
          }
       }
    }

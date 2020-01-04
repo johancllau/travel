@@ -69,7 +69,7 @@
 
   <div class="btn-toolbar text-center">
     <div class="add">
-      <a href="more_destinasi.php?lokasi_destinasi=<?php echo $lokasi; ?>" role="button" class="btn btn-success">More ...</a>
+      <a href="more_destinasi.php?lokasi_destinasi=<?= $lokasi ?>" role="button" class="btn btn-success">More ...</a>
     </div>
   </div>
 
@@ -96,7 +96,7 @@
 
   <div class="btn-toolbar text-center">
     <div class="add">
-      <a href="more_destinasi.php?lokasi_destinasi=<?php echo $lokasi; ?>" role="button" class="btn btn-success">More ...</a>
+      <a href="more_destinasi.php?lokasi_destinasi=<?= $lokasi ?>" role="button" class="btn btn-success">More ...</a>
     </div>
   </div>
 
@@ -123,7 +123,7 @@
 
   <div class="btn-toolbar text-center">
     <div class="add">
-      <a href="more_destinasi.php?lokasi_destinasi=<?php echo $lokasi; ?>" role="button" class="btn btn-success">More ...</a>
+      <a href="more_destinasi.php?lokasi_destinasi=<?= $lokasi ?>" role="button" class="btn btn-success">More ...</a>
     </div>
   </div>
   
@@ -149,8 +149,7 @@
   ?>
 
   <div class="btn-toolbar text-center">
-    <div class="add">
-      <a href="more_destinasi.php?lokasi_destinasi=<?php echo $lokasi; ?>" role="button" class="btn btn-success">More ...</a>
+    <div class="add">      <a href="more_destinasi.php?lokasi_destinasi=<?= $lokasi ?>" role="button" class="btn btn-success">More ...</a>
     </div>
   </div>
 
@@ -177,7 +176,7 @@
 
   <div class="btn-toolbar text-center">
     <div class="add">
-      <a href="more_destinasi.php?lokasi_destinasi=<?php echo $lokasi; ?>" role="button" class="btn btn-success">More ...</a>
+      <a href="more_destinasi.php?lokasi_destinasi=<?= $lokasi ?>" role="button" class="btn btn-success">More ...</a>
     </div>
   </div>
 

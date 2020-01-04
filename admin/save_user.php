@@ -215,7 +215,7 @@
                </table></body>";
                return;
       }
-      if (strlen(trim($status))) {
+      if (strlen(trim($status)) == 0) {
          $falidate_date = false;
          echo "<H3 align='center'>Status Harus di Pilih<H3>";
          echo "<table border='0' align='center'>

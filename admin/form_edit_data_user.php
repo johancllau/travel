@@ -26,7 +26,15 @@
 		$datausername = $_GET["username"];
 		$sql = "SELECT * FROM user WHERE username='$datausername'";
 		$hasil = mysqli_query($kon,$sql);
-		if (!$hasil) die ("Gagal query. . .");
+		if (!$hasil) {
+			echo "<H3 align='center'>Gagal Query!!<H3>";
+            echo "<table border='0' align='center'>
+                  <tr>
+                     <td><input type='button' value='kembali' onClick='self.history.back()'></td>
+                  </tr>
+               </table></body>";
+               return;
+		}
 
 		$data = mysqli_fetch_array($hasil);
 
@@ -41,16 +49,16 @@
 	?>
 	<h3 align="center">Form Edit Data User</h3>
 	<form = name="form-Daftar" action="save_user.php" method="post">
-		<input type="hidden" name="username" value="<?php echo $username; ?>"/>
-		<input type="hidden" name="password" value="<?php echo $password; ?>">
+		<input type="hidden" name="username" value="<?= $username; ?>"/>
+		<input type="hidden" name="password" value="<?= $password; ?>">
 		<table border="0" align="center" cellpadding="10">
 			<tr>
 				<td><label for="Nama">Nama</label></td>
-				<td><input type="text" name="nama" id="Nama" placeholder="Nama" value="<?php echo $nama; ?>"></td>
+				<td><input type="text" name="nama" id="Nama" placeholder="Nama" value="<?= $nama; ?>"></td>
 			</tr>
 			<tr>
 				<td><label for="E-mail">E-mail</label></td>
-				<td><input type="email" name="email" id="E-mail" placeholder="yohak@gmail.com" value="<?php echo $email; ?>"></td>
+				<td><input type="email" name="email" id="E-mail" placeholder="yohak@gmail.com" value="<?= $email; ?>"></td>
 			</tr>
 			<tr>
 				<td><label for="Gender">Gender</label></td>
@@ -75,13 +83,13 @@
 				<td><label for="Alamat">Alamat</label></td>
 				<td>
 					<textarea name="alamat" id="Alamat" maxlength="1000" placeholder="Alamat">
-						<?php echo $alamat; ?>
+						<?= $alamat; ?>
 					</textarea>
 				</td>
 			</tr>
 			<tr>
 				<td><label for="No-telp">No.Telp</label></td>
-				<td><input type="text" name="notelp" id="No-telp" placeholder="082237xxxxxxx" value="<?php echo $notelp ?>"></td>
+				<td><input type="text" name="notelp" id="No-telp" placeholder="082237xxxxxxx" value="<?= $notelp ?>"></td>
 			</tr>
 			<tr>
 				<td><label for="Hak-Akses">Hak Akses</label></td>
