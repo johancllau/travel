@@ -19,17 +19,23 @@
 		  <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
 		  <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
 		<![endif]-->
-	  </head>
+		<link rel="stylesheet" href="../css/jquery-ui.css" type="text/css"/>
+		<script src="jquery-1.10.2.js" type="text/javascript"></script>
+		<script src="jquery-ui.js" type="text/javascript"></script>
+		<script>
+  			$(function() {
+    			$( "#datepicker" ).datepicker();
+  			});
+		</script>
+	</head>
 <body>
 	<h3 align="center">Form Input Data Booking</h3>
 	<br/>
-	<form = name="form-Daftar" action="save_destination.php" method="post" enctype="multipart/form-data">
+	<form = name="form-Booking" action="save_booking.php" method="post" enctype="multipart/form-data">
 		<table border="0" align="center" cellpadding="10">
 			<tr>
 				<td><label for="Tanggal">Tanggal Tour</label></td>
-				<td><select name="tanggal">
-					<option value="">Select...</option>
-			 	</select></td>
+				<td><input type="text" name="tanggal_tour" id="datepicker" /></td>
 			</tr>
 	
 			<tr>
