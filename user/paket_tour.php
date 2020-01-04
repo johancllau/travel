@@ -22,43 +22,74 @@
       <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
     <![endif]-->
   </head>
-<body>
-<?php 
-   include "navbar.html"; 
+  <body>
+   <?php 
+      include "navbar.html"; 
    ?>
-<?php
-	include "../koneksi.php";
-	$sql = "select * from paket_tour";
-	$hasil = mysqli_query($kon, $sql);
-	if(!$hasil)
-		die("Gagal query..".mysqli_error($kon));
-?>
+    <!-- Slide gallery -->
+    <div class="jumbotron">
+    <!-- End Slide gallery -->
+    </div>
 
-<h2>Daftar Paket Tour</h2><br><hr>
-&nbsp; &nbsp; &nbsp;
-<table border="1" align="center">
-	<tr>
-		<th width="100">Nama Paket Tour</th>
-		<th width="100">Destinasi</th>
-		<th width="100">Description</th>
-		<th width="100">Harga</th>
-		<th width="100"></th>
-	</tr>
-	<?php
-		$no = 0;
-		while ($row = mysqli_fetch_assoc($hasil))
-		{
-			echo " <tr>" ;
-			echo " 	<td>".$row['nama_paket']." </td> ";
-			echo "	<td>".$row['destinasi']." </td> ";
-			echo "	<td>".$row['description']." </td> ";
-			echo " 	<td>".$row['harga_paket']." </td> ";
-			echo "	<td> ";
-			echo "	<a href='form_booking.php'>Book Now</a>";
-			echo "	</td>";
-			echo " </tr>" ;
-		}
-	?>
-</table>
+    <!-- Thumbnails -->
+    <div class="search">
+      <input type="text" placeholder="Search.." name="search">
+      <button type="submit"><i class="fa fa-search"></i></button>
+    </div>
 
-	</body>
+    <div class="btn-toolbar text-center">
+
+    </div>
+
+    <div class="container thumbs">
+    <h1 align="center">Daftar Paket Tour</h1>
+    <?php
+      include "../koneksi.php";
+      $select = "SELECT pt.id_paket_tour, pt.nama_paket, pt.harga_paket, pt.description,
+                  d.nama_destinasi, d.id_destinasi,
+                  mt.kapasitas, mt.image_travell
+                  FROM paket_tour AS pt
+                  JOIN destinasi AS d ON pt.id_destinasi = d.id_destinasi
+                  JOIN mobil_travel AS mt ON pt.kode_travell = mt.kode_travell";
+      $query = mysqli_query($kon, $select);
+      echo "
+              <table border='1' align='center' cellpadding='5' cellspacing='10'>
+                <th>Nama Paket</th>
+                <th>Destinasi</th>
+                <th>Travell</th>
+                <th>Kapasitas</th>
+                <th>Harga</th>
+                <th>Description</th>
+                <th>Booking</th>
+          ";
+
+      while ($row = mysqli_fetch_assoc($query)) {
+        echo "
+              <tr>
+                <td align='center'>".$row['nama_paket']."</td>
+                <td align='center'><a href='detail_destinasi.php?id_destinasi=".$row['id_destinasi']."'>".$row['nama_destinasi']."</a></td>
+                <td align='center'><img src='../pict/".$row['image_travell']."' width='150' height='150'></td>
+                <td align='center'>".$row['kapasitas']." Penumpang</td>
+                <td align='center'>Rp. ".$row['harga_paket']."</td>
+                <td align='center'>".$row['description']."</td>
+                <td align='center'><a href='form_booking.php'>Booking</a></td>
+              </tr>
+            ";
+      }
+      echo "</table>";
+  ?>
+
+</div>
+    <!-- Footer -->
+    <?php
+      include "../footer.html";
+    ?>
+
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="../js/jquery.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="../js/bootstrap.min.js"></script>
+    <script src="../js/bootshape.js"></script>
+
+  </body>
+</html>

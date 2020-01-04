@@ -20,11 +20,11 @@
  </html>
 <?php
     include "../koneksi.php";
-    if(isset($_POST['Login'])){
-        $username = $_POST['username'];
-    }
+
     if (isset($_POST['submit']) and !empty($_POST['submit'])) {
    	    $tgl = $_POST['tanggal_tour'];
+        $username = $_SESSION['user'];
+        
        	$falidate_date = true;
         if (strlen(trim($tgl)) == 0) {
             $falidate_date = false;

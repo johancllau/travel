@@ -20,8 +20,8 @@
 		  <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
 		<![endif]-->
 		<link rel="stylesheet" href="../css/jquery-ui.css" type="text/css"/>
-		<script src="jquery-1.10.2.js" type="text/javascript"></script>
-		<script src="jquery-ui.js" type="text/javascript"></script>
+		<script src="../js/jquery-1.10.2.js" type="text/javascript"></script>
+		<script src="../js/jquery-ui.js" type="text/javascript"></script>
 		<script>
   			$(function() {
     			$( "#datepicker" ).datepicker();
@@ -40,9 +40,9 @@
 	
 			<tr>
 				<td colspan="2" align="center">
-					<input type="submit" name="submit" value="Submit" align="center" class="btn btn-primary">
-					<input type="reset" name="reset" value="Reset" align="center" class="btn btn-success">
 					<input type="button" name="cancel" value="Cancel" align="center" onclick="self.history.back()" class="btn btn-danger">
+					<input type="reset" name="reset" value="Reset" align="center" class="btn btn-success">
+					<input type="submit" name="submit" value="Submit" align="center" class="btn btn-primary">
 				</td>
 			</tr>
 		</table>
