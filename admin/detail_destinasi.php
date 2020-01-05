@@ -103,7 +103,7 @@
     </h4>
     <h4>
       <?php 
-        echo "Descripsi: <br/>";
+        echo "Deskripsi: <br/>";
         echo "<p>".$desc."</p>"; 
       ?>
     </h4>

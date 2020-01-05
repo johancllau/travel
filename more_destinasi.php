@@ -42,7 +42,7 @@
         <a href="form_input_data_destination.html" role="button" class="btn btn-success">Add Destinations</a>
     </div>
     </div>
-
+    
     <div class="container thumbs">
     <?php
       include "koneksi.php";
@@ -55,8 +55,8 @@
               <div class='thumbnail'>
                 <img src='pict/".$row['image_destinasi']."' alt='' class='img-responsive'>
                 <div class='caption'>
-                  <h3 class=''>".$row['nama_destinasi']."</h3>
-                  <p>".$row['description']."</p>
+                  <h4>".$row['nama_destinasi']."</h4>
+                  <p>".(str_word_count($row['description'])> 10 ? substr($row['description'],0,100)."..." : $row['description'])."</p>
                   <div class='btn-toolbar text-center'>
                     <a href='detail_destinasi.php?id_destinasi=".$row['id_destinasi']."' role='button' class='btn btn-primary pull-right'>Details</a>
                   </div>

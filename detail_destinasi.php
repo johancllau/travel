@@ -89,7 +89,7 @@
       </div><!-- End Slide gallery -->
     </div>
 
-    <div class="container thumbs">
+    <div class="container">
     <h3>
       <?php echo $nama; ?>
     </h3>
@@ -98,7 +98,7 @@
     </h4>
     <h4>
       <?php 
-        echo "Descripsi: <br/>";
+        echo "Deskripsi: <br/>";
         echo "<p>".$desc."</p>"; 
       ?>
     </h4>
