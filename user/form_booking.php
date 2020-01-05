@@ -19,6 +19,7 @@
 		  <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
 		  <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
 		<![endif]-->
+<<<<<<< HEAD
 	  </head>
 <body>
 	<h3 align="center">Form Booking Paket Tour</h3>
@@ -60,6 +61,32 @@
 					<input type="submit" name="submit" value="Submit" align="center" class="btn btn-primary">
 					<input type="reset" name="reset" value="Reset" align="center" class="btn btn-success">
 					<input type="button" name="cancel" value="Cancel" align="center" onclick="self.history.back()" class="btn btn-danger">
+=======
+		<link rel="stylesheet" href="../css/jquery-ui.css" type="text/css"/>
+		<script src="../js/jquery-1.10.2.js" type="text/javascript"></script>
+		<script src="../js/jquery-ui.js" type="text/javascript"></script>
+		<script>
+  			$(function() {
+    			$( "#datepicker" ).datepicker();
+  			});
+		</script>
+	</head>
+<body>
+	<h3 align="center">Form Input Data Booking</h3>
+	<br/>
+	<form = name="form-Booking" action="save_booking.php" method="post" enctype="multipart/form-data">
+		<table border="0" align="center" cellpadding="10">
+			<tr>
+				<td><label for="Tanggal">Tanggal Tour</label></td>
+				<td><input type="text" name="tanggal_tour" id="datepicker" /></td>
+			</tr>
+	
+			<tr>
+				<td colspan="2" align="center">
+					<input type="button" name="cancel" value="Cancel" align="center" onclick="self.history.back()" class="btn btn-danger">
+					<input type="reset" name="reset" value="Reset" align="center" class="btn btn-success">
+					<input type="submit" name="submit" value="Submit" align="center" class="btn btn-primary">
+>>>>>>> 5b6eb0e4a88fbfc60846767ee7d6a98a710654ca
 				</td>
 			</tr>
 		</table>

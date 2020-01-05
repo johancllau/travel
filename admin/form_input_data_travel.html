@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Akakom Travel</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<!-- Bootstrap -->
+		<link href="../css/bootstrap.css" rel="stylesheet">
+		
+		<!--Google Fonts-->
+		<link href='http://fonts.googleapis.com/css?family=Belgrano|Courgette&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
+	
+		
+		<!--Bootshape-->
+		<link href="../css/bootshape.css" rel="stylesheet">
+	
+		<!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+		<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+		<!--[if lt IE 9]>
+		  <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+		  <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+		<![endif]-->
+	  </head>
+<body>
+	<h3 align="center">Form Input Data Destinasi</h3>
+	<br/>
+	<form = name="form-Daftar" action="save_travell.php" method="post" enctype="multipart/form-data">
+		<table border="0" align="center" cellpadding="10">
+			<tr>
+				<td><label for="Kapasitas">Kapasitas</label></td>
+				<td><select name="kapasitas" id="Kapasitas">
+					<option value="">Select...</option>
+					<option value="1">1 Penumpang</option>
+					<option value="2">2 Penumpang</option>
+					<option value="3">3 Penumpang</option>
+					<option value="4">4 Penumpang</option>
+					<option value="5">5 Penumpang</option>
+					<option value="6">6 Penumpang</option>
+					<option value="7">7 Penumpang</option>
+					<option value="8">8 Penumpang</option>
+					<option value="9">9 Penumpang</option>
+					<option value="10">10 Penumpang</option>
+			 	</select></td>
+			</tr>
+			<tr>
+				<td><label for="Foto">Foto</label></td>
+				<td><input type="file" name="foto" id="Foto"/></td>
+			</tr>
+
+			<tr>
+				<td colspan="2" align="center">
+					<input type="button" name="cancel" value="Cancel" align="center" onclick="self.history.back()" class="btn btn-danger">
+					<input type="reset" name="reset" value="Reset" align="center" class="btn btn-success">
+					<input type="submit" name="submit" value="Submit" align="center" class="btn btn-primary">
+				</td>
+			</tr>
+		</table>
+	</form>
+</body>
+</html>

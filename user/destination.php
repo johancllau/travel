@@ -24,7 +24,7 @@
   </head>
   <body>
    <?php 
-     include "navbar.html"; 
+      include "navbar.html"; 
    ?>
     <!-- Slide gallery -->
     <div class="jumbotron">
@@ -43,191 +43,143 @@
 
     <div class="container thumbs">
     <h1>Yogyakarta</h1>
-      <div class="col-sm-6 col-md-4">
-        <div class="thumbnail">
-          <img src="img/pic1.jpg" alt="" class="img-responsive">
-          <div class="caption">
-            <h3 class="">Motor</h3>
-            <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.</p>
-            <div class="btn-toolbar text-center">
-              <a href="#" role="button" class="btn btn-primary pull-right">Details</a>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="col-sm-6 col-md-4">
-        <div class="thumbnail">
-          <img src="img/pic2.jpg" alt="" class="img-responsive">
-          <div class="caption">
-            <h3 class="">Luxury</h3>
-            <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.</p>
-            <div class="btn-toolbar text-center">
-              <a href="#" role="button" class="btn btn-primary pull-right">Details</a>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="col-sm-6 col-md-4">
-        <div class="thumbnail">
-          <img src="img/pic2.jpg" alt="" class="img-responsive">
-          <div class="caption">
-            <h3 class="">Luxury</h3>
-            <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.</p>
-            <div class="btn-toolbar text-center">
-              <a href="#" role="button" class="btn btn-primary pull-right">Details</a>
-            </div>
-          </div>
-        </div>
-      </div>
-      <h1>Gunung Kidul</h1>
-      <div class="col-sm-6 col-md-4">
-        <div class="thumbnail">
-          <img src="img/pic2.jpg" alt="" class="img-responsive">
-          <div class="caption">
-            <h3 class="">Luxury</h3>
-            <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.</p>
-            <div class="btn-toolbar text-center">
-              <a href="#" role="button" class="btn btn-primary pull-right">Details</a>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="col-sm-6 col-md-4">
-        <div class="thumbnail">
-          <img src="img/pic2.jpg" alt="" class="img-responsive">
-          <div class="caption">
-            <h3 class="">Luxury</h3>
-            <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.</p>
-            <div class="btn-toolbar text-center">
-              <a href="#" role="button" class="btn btn-primary pull-right">Details</a>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="col-sm-6 col-md-4">
-        <div class="thumbnail">
-          <img src="img/pic3.jpg" alt="" class="img-responsive">
-          <div class="caption">
-            <h3 class="">Sailboats</h3>
-            <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.</p>
-            <div class="btn-toolbar text-center">
-              <a href="#" role="button" class="btn btn-primary pull-right">Details</a>
-            </div>
-          </div>
-        </div>
-      </div>
-      <h1>Kulon Progo</h1>
-      <div class="col-sm-6 col-md-4">
-        <div class="thumbnail">
-          <img src="img/pic1.jpg" alt="" class="img-responsive">
-          <div class="caption">
-            <h3 class="">Motor</h3>
-            <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.</p>
-            <div class="btn-toolbar text-center">
-              <a href="#" role="button" class="btn btn-primary pull-right">Details</a>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="col-sm-6 col-md-4">
-        <div class="thumbnail">
-          <img src="img/pic2.jpg" alt="" class="img-responsive">
-          <div class="caption">
-            <h3 class="">Luxury</h3>
-            <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.</p>
-            <div class="btn-toolbar text-center">
-              <a href="#" role="button" class="btn btn-primary pull-right">Details</a>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="col-sm-6 col-md-4">
-        <div class="thumbnail">
-          <img src="img/pic2.jpg" alt="" class="img-responsive">
-          <div class="caption">
-            <h3 class="">Luxury</h3>
-            <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.</p>
-            <div class="btn-toolbar text-center">
-              <a href="#" role="button" class="btn btn-primary pull-right">Details</a>
-            </div>
-          </div>
-        </div>
-      </div>
-      <h1>Bantul</h1>
-      <div class="col-sm-6 col-md-4">
-        <div class="thumbnail">
-          <img src="img/pic1.jpg" alt="" class="img-responsive">
-          <div class="caption">
-            <h3 class="">Motor</h3>
-            <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.</p>
-            <div class="btn-toolbar text-center">
-              <a href="#" role="button" class="btn btn-primary pull-right">Details</a>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="col-sm-6 col-md-4">
-        <div class="thumbnail">
-          <img src="img/pic2.jpg" alt="" class="img-responsive">
-          <div class="caption">
-            <h3 class="">Luxury</h3>
-            <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.</p>
-            <div class="btn-toolbar text-center">
-              <a href="#" role="button" class="btn btn-primary pull-right">Details</a>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="col-sm-6 col-md-4">
-        <div class="thumbnail">
-          <img src="img/pic2.jpg" alt="" class="img-responsive">
-          <div class="caption">
-            <h3 class="">Luxury</h3>
-            <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.</p>
-            <div class="btn-toolbar text-center">
-              <a href="#" role="button" class="btn btn-primary pull-right">Details</a>
-            </div>
-          </div>
-        </div>
-      </div>
-      <h1>Sleman</h1>
-      <div class="col-sm-6 col-md-4">
-        <div class="thumbnail">
-          <img src="img/sleman/Ratuboko.jpg" alt="" class="img-responsive">
-          <div class="caption">
-            <h3 class="">Motor</h3>
-            <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.</p>
-            <div class="btn-toolbar text-center">
-              <a href="#" role="button" class="btn btn-primary pull-right">Details</a>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="col-sm-6 col-md-4">
-        <div class="thumbnail">
-          <img src="img/pic2.jpg" alt="" class="img-responsive">
-          <div class="caption">
-            <h3 class="">Luxury</h3>
-            <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.</p>
-            <div class="btn-toolbar text-center">
-              <a href="#" role="button" class="btn btn-primary pull-right">Details</a>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="col-sm-6 col-md-4">
-        <div class="thumbnail">
-          <img src="img/pic2.jpg" alt="" class="img-responsive">
-          <div class="caption">
-            <h3 class="">Luxury</h3>
-            <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.</p>
-            <div class="btn-toolbar text-center">
-              <a href="#" role="button" class="btn btn-primary pull-right">Details</a>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div><!-- End Thumbnails -->
+    <?php
+      include "../koneksi.php";
+      $lokasi = "";
+      $query = mysqli_query($kon, "SELECT * FROM destinasi WHERE lokasi_destinasi='Yogyakarta' ORDER BY id_destinasi DESC LIMIT 3");
+      while ($row = mysqli_fetch_assoc($query)) {
+        $lokasi = $row['lokasi_destinasi'];
+        echo "
+            <div class='col-sm-6 col-md-4'>
+              <div class='thumbnail'>
+                <img src='../pict/".$row['image_destinasi']."' alt='' class='img-responsive'>
+                <div class='caption'>
+                  <h3 class=''>".$row['nama_destinasi']."</h3>
+                  <p>".$row['description']."</p>
+                  <div class='btn-toolbar text-center'>
+                    <a href='detail_destinasi.php?id_destinasi=".$row['id_destinasi']."' role='button' class='btn btn-primary pull-right'>Details</a>
+                  </div>
+                </div>
+              </div>
+            </div>";
+      }
+  ?>
+
+  <div class="btn-toolbar text-center">
+    <div class="add">
+      <a href="more_destinasi.php?lokasi_destinasi=<?php echo $lokasi; ?>" role="button" class="btn btn-success">More ...</a>
+    </div>
+  </div>
+
+  <h1>Gunung Kidul</h1>
+  <?php
+    $query = mysqli_query($kon, "SELECT * FROM destinasi WHERE lokasi_destinasi='Gunung Kidul' ORDER BY id_destinasi LIMIT 3");
+    while ($row = mysqli_fetch_assoc($query)) {
+      $lokasi = $row['lokasi_destinasi'];
+      echo "
+            <div class='col-sm-6 col-md-4'>
+              <div class='thumbnail'>
+                <img src='../pict/".$row['image_destinasi']."' alt='' class='img-responsive'>
+                <div class='caption'>
+                  <h3 class=''>".$row['nama_destinasi']."</h3>
+                  <p>".$row['description']."</p>
+                  <div class='btn-toolbar text-center'>
+                    <a href='detail_destinasi.php?id_destinasi=".$row['id_destinasi']."' role='button' class='btn btn-primary pull-right'>Details</a>
+                  </div>
+                </div>
+              </div>
+            </div>";
+    }
+  ?>
+
+  <div class="btn-toolbar text-center">
+    <div class="add">
+      <a href="more_destinasi.php?lokasi_destinasi=<?php echo $lokasi; ?>" role="button" class="btn btn-success">More ...</a>
+    </div>
+  </div>
+
+  <h1>Kulon Progo</h1>
+  <?php
+    $query = mysqli_query($kon, "SELECT * FROM destinasi WHERE lokasi_destinasi=-'Kulon Progo' ORDER BY id_destinasi LIMIT 3");
+    while ($row = mysqli_fetch_assoc($query)) {
+      $lokasi = $row['lokasi_destinasi'];
+      echo "
+            <div class='col-sm-6 col-md-4'>
+              <div class='thumbnail'>
+                <img src='../pict/".$row['image_destinasi']."' alt='' class='img-responsive'>
+                <div class='caption'>
+                  <h3 class=''>".$row['nama_destinasi']."</h3>
+                  <p>".$row['description']."</p>
+                  <div class='btn-toolbar text-center'>
+                    <a href='#' role='button' class='btn btn-primary pull-right'>Details</a>
+                  </div>
+                </div>
+              </div>
+            </div>";
+    }
+  ?>
+
+  <div class="btn-toolbar text-center">
+    <div class="add">
+      <a href="more_destinasi.php?lokasi_destinasi=<?php echo $lokasi; ?>" role="button" class="btn btn-success">More ...</a>
+    </div>
+  </div>
+  
+  <h1>Bantul</h1>
+  <?php
+    $query = mysqli_query($kon,"SELECT * FROM destinasi WHERE lokasi_destinasi = 'Bantul' ORDER BY id_destinasi LIMIT 3");
+    while ($row = mysqli_fetch_assoc($query)) {
+      $lokasi = $row['lokasi_destinasi'];
+      echo "
+            <div class='col-sm-6 col-md-4'>
+              <div class='thumbnail'>
+                <img src='../pict/".$row['image_destinasi']."' alt='' class='img-responsive'>
+                <div class='caption'>
+                  <h3 class=''>".$row['nama_destinasi']."</h3>
+                  <p>".$row['description']."</p>
+                  <div class='btn-toolbar text-center'>
+                    <a href='#' role='button' class='btn btn-primary pull-right'>Details</a>
+                  </div>
+                </div>
+              </div>
+            </div>";
+    }
+  ?>
+
+  <div class="btn-toolbar text-center">
+    <div class="add">
+      <a href="more_destinasi.php?lokasi_destinasi=<?php echo $lokasi; ?>" role="button" class="btn btn-success">More ...</a>
+    </div>
+  </div>
+
+  <h1>Sleman</h1>
+  <?php
+    $query = mysqli_query($kon, "SELECT * FROM destinasi WHERE lokasi_destinasi='Sleman' ORDER BY id_destinasi LIMIT 3");
+    while ($row = mysqli_fetch_assoc($query)) {
+      $lokasi = $row['lokasi_destinasi'];
+      echo "
+            <div class='col-sm-6 col-md-4'>
+              <div class='thumbnail'>
+                <img src='../pict/".$row['image_destinasi']."' alt='' class='img-responsive'>
+                <div class='caption'>
+                  <h3 class=''>".$row['nama_destinasi']."</h3>
+                  <p>".$row['description']."</p>
+                  <div class='btn-toolbar text-center'>
+                    <a href='#' role='button' class='btn btn-primary pull-right'>Details</a>
+                  </div>
+                </div>
+              </div>
+            </div>";
+    }
+  ?>
+
+  <div class="btn-toolbar text-center">
+    <div class="add">
+      <a href="more_destinasi.php?lokasi_destinasi=<?php echo $lokasi; ?>" role="button" class="btn btn-success">More ...</a>
+    </div>
+  </div>
+
+</div>
     <!-- Footer -->
     <?php
       include "../footer.html";
@@ -238,5 +190,6 @@
     <!-- Include all compiled plugins (below), or include individual files as needed -->
     <script src="../js/bootstrap.min.js"></script>
     <script src="../js/bootshape.js"></script>
+
   </body>
 </html>
