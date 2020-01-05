@@ -22,7 +22,8 @@
     include "../koneksi.php";
 
     if (isset($_POST['submit']) and !empty($_POST['submit'])) {
-   	    $tgl = $_POST['tanggal_tour'];
+   	    $tgl      = $_POST['tanggal_tour'];
+        $id_paket = $_POST['id_paket'];
         $username = $_SESSION['user'];
         
        	$falidate_date = true;
@@ -38,7 +39,7 @@
         }
 
         if ($falidate_date) {
-            $sql = "INSERT INTO booking (tanggal_tour, username) VALUES ('$tgl', '$username');";
+            $sql = "INSERT INTO booking (tanggal_tour, username, id_paket_tour) VALUES ('$tgl', '$username', $id_paket);";
             $hasil = mysqli_query($kon, $sql);
             if (!$hasil) {
                 echo "<H3 align='center'>Gagal Menyimpan Data!!<H3>";
