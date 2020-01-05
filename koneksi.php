@@ -3,7 +3,7 @@ error_reporting(E_ALL ^ E_DEPRECATED);
 session_start();
 $host="localhost";
 $user="root";
-$pass="johancllau99";
+$pass="";
 $dbName="travel";
 
 $kon=mysqli_connect($host, $user,$pass);

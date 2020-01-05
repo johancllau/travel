@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.8.0
+-- version 4.9.0.1
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jan 05, 2020 at 07:51 AM
--- Server version: 10.1.31-MariaDB
--- PHP Version: 7.2.4
+-- Generation Time: Jan 05, 2020 at 10:39 AM
+-- Server version: 10.4.6-MariaDB
+-- PHP Version: 7.3.9
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -31,17 +31,8 @@ SET time_zone = "+00:00";
 CREATE TABLE `booking` (
   `kode_booking` int(11) NOT NULL,
   `tanggal_tour` varchar(20) NOT NULL,
-  `username` varchar(50) NOT NULL,
-  `id_paket_tour` int(11) NOT NULL
+  `username` varchar(100) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
---
--- Dumping data for table `booking`
---
-
-INSERT INTO `booking` (`kode_booking`, `tanggal_tour`, `username`, `id_paket_tour`) VALUES
-(1, '20/01/2020', 'Dhany', 1),
-(2, '25/05/2020', 'Galang krsnt', 3);
 
 -- --------------------------------------------------------
 
@@ -63,19 +54,26 @@ CREATE TABLE `destinasi` (
 --
 
 INSERT INTO `destinasi` (`id_destinasi`, `nama_destinasi`, `lokasi_destinasi`, `alamat_destinasi`, `image_destinasi`, `description`) VALUES
-(2, 'Jalan Malioboro', 'Yogyakarta', '						Jalan malioboro					', 'malioboro.jpg', '						tempat jalan sobat ambyar									'),
-(3, 'Alun Alun Kidul', 'Yogyakarta', '						Alun-Alun Kidul St, Patehan, Kraton, Yogyakarta City, Special Region of Yogyakarta 55133					', 'alun-alunKidul.jpg', '						Tempat nongki santuy gaming stay classy							'),
-(4, 'Air Tidur', 'Gunung Kidul', '						Desa Bleberan, Kecamatan Playen, Kabupaten Gunungkidul, Yogyakarta					', 'kraton-jogja.jpg', '						Yah air terjun, bodo amat dah								'),
-(5, 'Pantai Siung', 'Gunung Kidul', '						Kec. Bumi sari natar, tepatnya berada di Dusun Duwet, Kelurahan Purwodadi, Kecamatan Tepus, Ka', 'Air-Terjun-Sri-Gethuk.jpg', '						Pantai nya enak, banyak air laut					'),
-(8, 'Pantai Pok Tunggal ', 'Gunung Kidul', '						Jalan Pantai pok Tunggal					', 'TamanPintar.jpg', '						ini pantai bos							'),
-(12, 'Taman Pintar', 'Yogyakarta', 'Jalan Panembahan Senopati No. 1-3, Yogyakarta, Daerah Istimewa Yogyakarta 55122', 'TamanPintar.jpg', '		taman goblok			'),
-(15, 'Pantai Baru', 'Gunung Kidul', '												Jln Gedong Kuning 254B, Bantul, DIY, Indonesia, Bumi										', 'Air-Terjun-Sri-Gethuk.jpg', '						Pantai ini sangat bagus dikunjungi karena memiliki view yang sangat bagus dan menghangatkan badan. Pantai ini juga terkenal dengan keindahan alam yang sangat mempesona.														'),
-(16, 'Air Terjun Matrix', 'Sleman', '												Jln Gedong Kuning 254B, Bantul, DIY, Indonesia, Bumi										', 'bunker-kaliadem.jpg', 'Bunker KaliAdem ini memang adem, karena lokasinya yang sangat berdekat denganm Gunug  Merapi yang ada di DIY.														'),
-(17, 'Gunung Kembar', 'Bantul', 'Jln Gedong Kuning 254B, Bantul, DIY, Indonesia, Bumi', 'Sindu-Kusuma-Edupark.jpg', 'Ini Merupakan Gunung Kembar yang memikat hati para pria					'),
-(18, 'JogjaBuy', 'Bantul', 'Jln Gedong Kuning 254B, Bantul, DIY, Indonesia, Bumi', 'jogja-bay.jpg', 'JogjaBay adalah tempat untum mantap-mantap dan enak-enak!!					'),
-(19, 'JogjaTronik', 'Bantul', 'Jln Gedong Kuning 254B, Bantul, DIY, Indonesia, Bumi', 'Ratuboko.jpg', 'JogjaBay adalah tempat untum mantap-mantap dan enak-enak!!										'),
-(20, 'Candi Prambanan', 'Sleman', 'Jln Gedong Kuning 254B, Bantul, DIY, Indonesia, Bumi', 'candi-prambanan.jpg', 'Candi ini merupakan Candi, dimana candi itu sendiri merupakan candi dan juga candi					'),
-(21, 'Ratu Boko', 'Sleman', 'Jln Gedong Kuning 254B, Bantul, DIY, Indonesia, Bumi', 'Ratuboko.jpg', 'Ratu Boko merupakan tempat untuk Ratu Boko itu sendiri dan keluarganya.					');
+(22, 'Alun Alun Kidul', 'Yogyakarta', 'Alun-Alun Kidul St, Patehan, Kraton, Yogyakarta City, Special Region of Yogyakarta 55133', 'alun-alunKidul.jpg', 'Alun-alun Kidul Yogyakarta dikenal dengan nama Alkid diyakini sebagai tempat istirahat ( palereman ) bagi para Dewa. Oleh karena itu alun-alun tersebut sekarang ini banyak digunakan orang sebagai tempat ngleremke ati atau menentramkan hati banyak orang.		'),
+(23, 'Taman Pintar', 'Yogyakarta', 'Jl. Panembahan Senopati No.1-3, Ngupasan, Kec. Gondomanan, Kota Yogyakarta, Daerah Istimewa Yogyakar', 'TamanPintar.jpg', 'Taman Pintar Yogyakarta adalah wahana wisata yang terdapat di pusat Kota Yogyakarta, tepatnya di Jalan Panembahan Senopati No. 1-3, Yogyakarta, di kawasan Benteng Vredeburg. Taman ini memadukan tempat wisata rekreasi maupun edukasi dalam satu lokasi				'),
+(24, 'Kraton Yogyakarta', 'Yogyakarta', 'Jl. Rotowijayan Blok No. 1, Panembahan, Kecamatan Kraton, Kota Yogyakarta, Daerah Istimewa Yogyakart', 'kraton-jogja.jpg', '					Keraton Ngayogyakarta Hadiningrat atau Keraton Yogyakarta merupakan istana resmi Kesultanan Ngayogyakarta Hadiningrat yang kini berlokasi di Kota Yogyakarta, Daerah Istimewa Yogyakarta, Indonesia'),
+(25, 'Taman Sari', 'Yogyakarta', 'Wisata Taman Sari Jalan Tamanan, Patehan, Kecamatan Kraton, Kota Yogyakarta, Daerah Istimewa Yogyaka', 'tamansari.jpg', 'Taman Sari Yogyakarta atau Taman Sari Keraton Yogyakarta adalah situs bekas taman atau kebun istana Keraton Ngayogyakarta Hadiningrat, yang dapat dibandingkan dengan Kebun Raya Bogor sebagai kebun Istana Bogor. Kebun ini dibangun pada zaman Sultan Hamengku Buwono I pada tahun 1758-1765/9		'),
+(26, 'Museum Benteng Vredeburg', 'Yogyakarta', 'Jl. Margo Mulyo No.6, Ngupasan, Kec. Gondomanan, Kota Yogyakarta, Daerah Istimewa Yogyakarta 55122', 'vredeburgmuseum.jpg', 'Museum Benteng Vredeburg adalah sebuah benteng yang terletak di depan Gedung Agung dan Kraton Kesultanan Yogyakarta. Sekarang, benteng ini menjadi sebuah museum. Di sejumlah bangunan di dalam benteng ini terdapat diorama mengenai sejarah Indonesia.					'),
+(27, 'Jalan Malioboro', 'Yogyakarta', 'Jalan Malioboro, Yogyakarta', 'malioboro.jpg', 'Jalan Malioboro adalah nama salah satu kawasan jalan dari tiga jalan di Kota Yogyakarta yang membentang dari Tugu Yogyakarta hingga ke perempatan Kantor Pos Yogyakarta. Secara keseluruhan terdiri dari Jalan Margo Utomo, Jalan Malioboro, dan Jalan Margo Mulyo. Jalan ini merupakan poros Garis Imajiner Kraton Yogyakarta.					'),
+(28, 'Air Terjun Sri Gethuk', 'Gunung Kidul', 'Desa Bleberan, Kecamatan Playen, Kabupaten Gunungkidul, Yogyakarta', 'Air-Terjun-Sri-Gethuk.jpg', 'Air Terjun Sri Gethuk merupakan salah satu objek wisata alam yang terletak di Kecamatan Playen, Kabupaten Gunungkidul, Yogyakarta. Air terjun ini berada di tepi Sungai Oyo sehingga untuk menikmatinya harus menyelusuri sungai dengan rakit.					'),
+(29, 'Pantai Siung', 'Gunung Kidul', 'Kec. Bumi sari natar, tepatnya berada di Dusun Duwet, Kelurahan Purwodadi, Kecamatan Tepus, Kabupate', 'pantai siung.jpg', 'Pantai Siung adalah suatu objek wisata pantai yang terletak di Kec. Bumi sari natar, tepatnya berada di Dusun Duwet, Kelurahan Purwodadi, Kecamatan Tepus, Kabupaten Gunungkidul, provinsi Daerah Istimewa Yogyakarta.					'),
+(30, 'Pantai Pok Tunggal ', 'Gunung Kidul', 'Tepus, Gunungkidul, Yogyakarta, Indonesia', 'pantai-pok-tunggal.jpg', 'Pesona Pantai Pok Tunggal dengan hamparan pasir putih yang dikelilingi oleh dinding perbukitan merupakan lokasi yang asyik untuk dieksplorasi. Pantai Pok Tunggal yang terletak di antara Pantai Indrayanti dan Pantai Siung ini semakin mengukuhkan Gunungkidul sebagai gudangnya pantai-pantai cantik berpasir putih yang masih alami.					'),
+(31, 'Kedung Pedut', 'Kulon Progo', 'Banyunganti, Jatimulyo, Girimulyo, Kulon Progo Regency, Special Region of Yogyakarta 55674', 'kedung-pedut.jpg', 'Air Terjun Kedung Pedut atau biasa disebut Curug Kedung Pedut berasal dari istilah bahasa Jawa. Curug yang berarti air terjun, kedung berarti kubangan atau kolam, dan pedut berarti kabut. Air Terjun Kedung Pedut merupakan salah satu wisata alam yang di Kulonprogo yang dikenal karena keindahan warna airnya.					'),
+(32, 'Taman Sungai Mudal', 'Kulon Progo', 'Banyunganti, Jatimulyo, Girimulyo, Kulon Progo Regency, Special Region of Yogyakarta 55674', 'taman-sungai-mudal.jpg', 'Air terjun yang indah & kolam alami yang sangat menarik pengunjung ke taman & area berenang yang indah ini.					'),
+(33, 'Waduk Sermo', 'Kulon Progo', 'Sremo Lor, Hargowilis, Kokap, Kulon Progo Regency, Special Region of Yogyakarta 55653', 'waduksermo.jpg', 'Waduk Sermo adalah sebuah waduk yang berada di Kabupaten Kulonprogo, Daerah Istimewa Yogyakarta, Indonesia. Waduk ini dibangun mulai tahun 1994 dan diresmikan oleh Presiden Soeharto 20 November 1996					'),
+(34, 'Puncak Kebun Buah Mangunan', 'Bantul', 'Jl. Imogiri - Dlingo, Sukorame, Mangunan, Dlingo, Bantul, Daerah Istimewa Yogyakarta 55783', 'kebunbuahmangunan.jpg', 'Kebun buah mangunan merupakan kebun yang berada diatas ketinggian 200 mdpl yang menjadikan kebun ini sangat indah saat sunrise dimana kita dapat menikmati awan yang berada tepat dibawah kita'),
+(35, 'Puncak Pinus Becici', 'Bantul', 'Gunungcilik, RT.07/RW.02, Gn. Cilik, Muntuk, Dlingo, Bantul, Daerah Istimewa Yogyakarta 55783', 'Puncak-Becici.jpg', 'Puncak Pinus Becici atau Puncak Becici merupakan objek wisata yang berada di Desa Muntuk, Kecamatan Dlingo, Kabupaten Bantul, Yogyakarta.					'),
+(36, 'Bukit Panguk Kediwung', 'Bantul', 'Kediwung, Mangunan, Dlingo, Bantul Regency, Special Region of Yogyakarta 55783', 'Bukit-Panguk-Bantul.jpg', 'Menu andalan di Bukti Panguk Kediwung adalah menikmati keindahan sunrise di atas awan. Sunrise ini bisa terlihat jelas, karena Bukit Panguk Kediwung yang menghadap ke timur.\r\n\r\nWaktu terbaik untuk bisa menikmati sunrise di Bukit Panguk Kediwung adalah pada jam 05.00 pagi. Untuk bulannya, bulan terbaik untuk mengunjunginya adalah pada bulan bulan musim kemarau. Jika terpaksa harus berkunjung bertepatan dengan bulan musim hujan, paling tidak pilihlah hari dimana sehari sebelumnya tidak ada hujan.					'),
+(37, 'Bunker Kaliadem Merapi', 'Sleman', 'Kinarejo, Hargobinangun, Pakem, Sleman Regency, Special Region of Yogyakarta 55582', 'bunker-kaliadem.jpg', 'Merupakan Bunker yang sudah ada dari zaman kolonial belanda untuk berlindung dari musuh dan erupsi gunung merapi, tempat nya berada dibawah gunung merapi menjadikan tempat ini banyak dikunjungi karena view dari sini sangat indah untuk melihat gunung merapi secara dekat 				'),
+(38, 'Jogja Bay Waterpark', 'Sleman', '						Jl. Utara Stadion, Jenengan, Maguwoharjo, Kec. Depok, Kabupaten Sleman, Daerah Istimewa Yogyak', 'jogja-bay.jpg', '						Merupakan tempat wisata air yang terletak disekitar hutan pengunungan, ditempat ini kita bisa mencoba berbagai wahana seluncuran air terbesar yang ada di yogyakarta										'),
+(39, 'Candi Prambanan', 'Sleman', 'Jl. Raya Solo - Yogyakarta No.16, Kranggan, Bokoharjo, Kec. Prambanan, Kabupaten Sleman, Daerah Isti', 'candi-prambanan.jpg', 'Candi Prambanan atau Candi Roro Jonggrang adalah kompleks candi Hindu terbesar di Indonesia yang dibangun pada abad ke-9 masehi. Candi ini dipersembahkan untuk Trimurti, tiga dewa utama Hindu yaitu Brahma sebagai dewa pencipta, Wisnu sebagai dewa pemelihara, dan Siwa sebagai dewa pemusnah/pelembur.					'),
+(40, 'Ratu Boko', 'Sleman', 'Jl. Raya Piyungan - Prambanan No.KM.2, Gatak, Bokoharjo, Kec. Prambanan, Kabupaten Sleman, Daerah Is', 'Ratuboko.jpg', 'Situs Ratu Baka atau Candi Boko adalah situs purbakala yang merupakan kompleks sejumlah sisa bangunan yang berada kira-kira 3 km di sebelah selatan dari kompleks Candi Prambanan, 18 km sebelah timur Kota Yogyakarta atau 50 km barat daya Kota Surakarta, Jawa Tengah, Indonesia.					'),
+(41, 'Sindu Kusuma Edupark', 'Sleman', 'Jl. Jambon Jl. Kragilan, Kragilan, Sinduadi, Kec. Mlati, Kabupaten Sleman, Daerah Istimewa Yogyakart', 'Sindu-Kusuma-Edupark.jpg', 'Merupakan kompleks bermain dengan berbagai macam wahana seperti  komedi putar dan sebagainya					');
 
 -- --------------------------------------------------------
 
@@ -122,15 +120,6 @@ CREATE TABLE `paket_tour` (
   `kode_travell` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
---
--- Dumping data for table `paket_tour`
---
-
-INSERT INTO `paket_tour` (`id_paket_tour`, `nama_paket`, `harga_paket`, `description`, `id_destinasi`, `kode_travell`) VALUES
-(1, 'paket cinta', 2000000, 'Paket untuk bercinta semalam tanpa merugikan orang lain', 18, 16),
-(3, 'Paket Cuman di Lihat Tanpa Menyentu', 10000, 'Paket yang sangat tidak cocok untuk anda					', 3, 17),
-(4, 'Paket Selingkuh Semalam', 700000, 'Selingkuh terjamin aman tanpa ribet 					', 17, 11);
-
 -- --------------------------------------------------------
 
 --
@@ -165,9 +154,7 @@ INSERT INTO `user` (`username`, `password`, `name`, `email`, `gender`, `notelp`,
 -- Indexes for table `booking`
 --
 ALTER TABLE `booking`
-  ADD PRIMARY KEY (`kode_booking`),
-  ADD KEY `username` (`username`),
-  ADD KEY `id_paket_tour` (`id_paket_tour`);
+  ADD PRIMARY KEY (`kode_booking`);
 
 --
 -- Indexes for table `destinasi`
@@ -203,13 +190,13 @@ ALTER TABLE `user`
 -- AUTO_INCREMENT for table `booking`
 --
 ALTER TABLE `booking`
-  MODIFY `kode_booking` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `kode_booking` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT for table `destinasi`
 --
 ALTER TABLE `destinasi`
-  MODIFY `id_destinasi` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=22;
+  MODIFY `id_destinasi` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=42;
 
 --
 -- AUTO_INCREMENT for table `mobil_travel`
@@ -221,18 +208,11 @@ ALTER TABLE `mobil_travel`
 -- AUTO_INCREMENT for table `paket_tour`
 --
 ALTER TABLE `paket_tour`
-  MODIFY `id_paket_tour` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id_paket_tour` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- Constraints for dumped tables
 --
-
---
--- Constraints for table `booking`
---
-ALTER TABLE `booking`
-  ADD CONSTRAINT `booking_ibfk_1` FOREIGN KEY (`username`) REFERENCES `user` (`username`),
-  ADD CONSTRAINT `booking_ibfk_2` FOREIGN KEY (`id_paket_tour`) REFERENCES `paket_tour` (`id_paket_tour`);
 
 --
 -- Constraints for table `paket_tour`

@@ -4,14 +4,14 @@
     <title>Akakom Travel</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- Bootstrap -->
-    <link href="../css/bootstrap.css" rel="stylesheet">
+    <link href="css/bootstrap.css" rel="stylesheet">
     
     <!--Google Fonts-->
     <link href='http://fonts.googleapis.com/css?family=Belgrano|Courgette&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
 
     
     <!--Bootshape-->
-    <link href="../css/bootshape.css" rel="stylesheet">
+    <link href="css/bootshape.css" rel="stylesheet">
 
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -37,17 +37,16 @@
             <li data-target="#carousel-example-generic" data-slide-to="2"></li>
             <li data-target="#carousel-example-generic" data-slide-to="3"></li>
             <li data-target="#carousel-example-generic" data-slide-to="4"></li>
-            
           </ol>
           <!-- Wrapper for slides -->
           <div class="carousel-inner">
 
           <?php
-          include "../koneksi.php";
+          include "koneksi.php";
           $query = mysqli_query($kon, "SELECT * FROM destinasi WHERE lokasi_destinasi = 'Yogyakarta' ORDER BY RAND() LIMIT 1");
           while ($row = mysqli_fetch_assoc($query)) {
           echo"<div class='item active'>
-          <img src='../pict/".$row['image_destinasi']."' alt=''>
+          <img src='pict/".$row['image_destinasi']."' alt=''>
           <div class='carousel-caption'>
           </div>
           </div>";  
@@ -58,7 +57,7 @@
           $query = mysqli_query($kon, "SELECT * FROM destinasi WHERE lokasi_destinasi = 'Gunung Kidul' ORDER BY RAND() LIMIT 1");
           while ($row = mysqli_fetch_assoc($query)) {
           echo"<div class='item'>
-          <img src='../pict/".$row['image_destinasi']."' alt=''>
+          <img src='pict/".$row['image_destinasi']."' alt=''>
           <div class='carousel-caption'>
           </div>
           </div>";  
@@ -69,7 +68,7 @@
           $query = mysqli_query($kon, "SELECT * FROM destinasi WHERE lokasi_destinasi = 'Kulon Progo' ORDER BY RAND() LIMIT 1");
           while ($row = mysqli_fetch_assoc($query)) {
           echo"<div class='item'>
-          <img src='../pict/".$row['image_destinasi']."' alt=''>
+          <img src='pict/".$row['image_destinasi']."' alt=''>
           <div class='carousel-caption'>
           </div>
           </div>";  
@@ -80,7 +79,7 @@
           $query = mysqli_query($kon, "SELECT * FROM destinasi WHERE lokasi_destinasi = 'Bantul' ORDER BY RAND() LIMIT 1");
           while ($row = mysqli_fetch_assoc($query)) {
           echo"<div class='item'>
-          <img src='../pict/".$row['image_destinasi']."' alt=''>
+          <img src='pict/".$row['image_destinasi']."' alt=''>
           <div class='carousel-caption'>
           </div>
           </div>";  
@@ -91,13 +90,13 @@
           $query = mysqli_query($kon, "SELECT * FROM destinasi WHERE lokasi_destinasi = 'Sleman' ORDER BY RAND() LIMIT 1");
           while ($row = mysqli_fetch_assoc($query)) {
           echo"<div class='item'>
-          <img src='../pict/".$row['image_destinasi']."' alt=''>
+          <img src='pict/".$row['image_destinasi']."' alt=''>
           <div class='carousel-caption'>
           </div>
           </div>";  
           }
           ?>
-          
+
           </div>
           <!-- Controls -->
           <a class="left carousel-control" href="#carousel-example-generic" data-slide="prev">
@@ -120,7 +119,7 @@
       echo "
             <div class='col-sm-6 col-md-4'>
               <div class='thumbnail'>
-                <img src='../pict/".$row['image_destinasi']."' alt='' class='img-responsive'>
+                <img src='pict/".$row['image_destinasi']."' alt='' class='img-responsive'>
                 <div class='caption'>
                   <h3 class=''>".$row['nama_destinasi']."</h3>
                   <p>".$row['description']."</p>
@@ -135,13 +134,13 @@
     </div><!-- End Thumbnails -->
     <!-- Footer -->
     <?php
-      include "../footer.html";
+      include "footer.html";
       ?>
 
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-    <script src="../js/jquery.js"></script>
+    <script src="js/jquery.js"></script>
     <!-- Include all compiled plugins (below), or include individual files as needed -->
-    <script src="../js/bootstrap.min.js"></script>
-    <script src="../js/bootshape.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/bootshape.js"></script>
   </body>
 </html>

@@ -19,6 +19,7 @@
       <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
       <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
     <![endif]-->
+
   </head>
   <body>
    <?php 
@@ -31,27 +32,72 @@
         <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
           <!-- Indicators -->
           <ol class="carousel-indicators">
-            <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
+            <li data-target="#carousel-example-generic" data-sl ide-to="0" class="active"></li>
             <li data-target="#carousel-example-generic" data-slide-to="1"></li>
             <li data-target="#carousel-example-generic" data-slide-to="2"></li>
+            <li data-target="#carousel-example-generic" data-slide-to="3"></li>
+            <li data-target="#carousel-example-generic" data-slide-to="4"></li>
+            
           </ol>
           <!-- Wrapper for slides -->
           <div class="carousel-inner">
-            <div class="item active">
-              <img src="../img/kp1.jpg" alt="">
-              <div class="carousel-caption">
-              </div>
-            </div>
-            <div class="item">
-              <img src="../img/carousel2.jpg" alt="">
-              <div class="carousel-caption">
-              </div>
-            </div>
-            <div class="item">
-              <img src="../img/carousel3.jpg" alt="">
-              <div class="carousel-caption">
-              </div>
-            </div>
+
+          <?php
+          include "../koneksi.php";
+          $query = mysqli_query($kon, "SELECT * FROM destinasi WHERE lokasi_destinasi = 'Yogyakarta' ORDER BY RAND() LIMIT 1");
+          while ($row = mysqli_fetch_assoc($query)) {
+          echo"<div class='item active'>
+          <img src='../pict/".$row['image_destinasi']."' alt=''>
+          <div class='carousel-caption'>
+          </div>
+          </div>";  
+          }
+          ?>
+          
+          <?php
+          $query = mysqli_query($kon, "SELECT * FROM destinasi WHERE lokasi_destinasi = 'Gunung Kidul' ORDER BY RAND() LIMIT 1");
+          while ($row = mysqli_fetch_assoc($query)) {
+          echo"<div class='item'>
+          <img src='../pict/".$row['image_destinasi']."' alt=''>
+          <div class='carousel-caption'>
+          </div>
+          </div>";  
+          }
+          ?>
+
+          <?php
+          $query = mysqli_query($kon, "SELECT * FROM destinasi WHERE lokasi_destinasi = 'Kulon Progo' ORDER BY RAND() LIMIT 1");
+          while ($row = mysqli_fetch_assoc($query)) {
+          echo"<div class='item'>
+          <img src='../pict/".$row['image_destinasi']."' alt=''>
+          <div class='carousel-caption'>
+          </div>
+          </div>";  
+          }
+          ?>
+          
+          <?php
+          $query = mysqli_query($kon, "SELECT * FROM destinasi WHERE lokasi_destinasi = 'Bantul' ORDER BY RAND() LIMIT 1");
+          while ($row = mysqli_fetch_assoc($query)) {
+          echo"<div class='item'>
+          <img src='../pict/".$row['image_destinasi']."' alt=''>
+          <div class='carousel-caption'>
+          </div>
+          </div>";  
+          }
+          ?>
+
+          <?php
+          $query = mysqli_query($kon, "SELECT * FROM destinasi WHERE lokasi_destinasi = 'Sleman' ORDER BY RAND() LIMIT 1");
+          while ($row = mysqli_fetch_assoc($query)) {
+          echo"<div class='item'>
+          <img src='../pict/".$row['image_destinasi']."' alt=''>
+          <div class='carousel-caption'>
+          </div>
+          </div>";  
+          }
+          ?>
+          
           </div>
           <!-- Controls -->
           <a class="left carousel-control" href="#carousel-example-generic" data-slide="prev">
@@ -67,42 +113,25 @@
 
     <!-- Thumbnails -->
     <div class="container thumbs">
-      <div class="col-sm-6 col-md-4">
-        <div class="thumbnail">
-          <img src="../img/pic1.jpg" alt="" class="img-responsive">
-          <div class="caption">
-            <h3 class="">Motor</h3>
-            <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.</p>
-            <div class="btn-toolbar text-center">
-              <a href="#" role="button" class="btn btn-primary pull-right">Details</a>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="col-sm-6 col-md-4">
-        <div class="thumbnail">
-          <img src="../img/pic2.jpg" alt="" class="img-responsive">
-          <div class="caption">
-            <h3 class="">Luxury</h3>
-            <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.</p>
-            <div class="btn-toolbar text-center">
-              <a href="#" role="button" class="btn btn-primary pull-right">Details</a>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="col-sm-6 col-md-4">
-        <div class="thumbnail">
-          <img src="../img/pic3.jpg" alt="" class="img-responsive">
-          <div class="caption">
-            <h3 class="">Sailboats</h3>
-            <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.</p>
-            <div class="btn-toolbar text-center">
-              <a href="#" role="button" class="btn btn-primary pull-right">Details</a>
-            </div>
-          </div>
-        </div>
-      </div>
+    <?php
+    $query = mysqli_query($kon, "SELECT * FROM destinasi ORDER BY RAND() LIMIT 3");
+    while ($row = mysqli_fetch_assoc($query)) {
+      $lokasi = $row['lokasi_destinasi'];
+      echo "
+            <div class='col-sm-6 col-md-4'>
+              <div class='thumbnail'>
+                <img src='../pict/".$row['image_destinasi']."' alt='' class='img-responsive'>
+                <div class='caption'>
+                  <h3 class=''>".$row['nama_destinasi']."</h3>
+                  <p>".$row['description']."</p>
+                  <div class='btn-toolbar text-center'>
+                    <a href='detail_destinasi.php?id_destinasi=".$row['id_destinasi']."' role='button' class='btn btn-primary pull-right'>Details</a>
+                  </div>
+                </div>
+              </div>
+            </div>";
+    }
+  ?>  
     </div><!-- End Thumbnails -->
     <!-- Footer -->
     <?php
