@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jan 04, 2020 at 03:20 PM
+-- Generation Time: Jan 05, 2020 at 07:51 AM
 -- Server version: 10.1.31-MariaDB
 -- PHP Version: 7.2.4
 
@@ -31,8 +31,17 @@ SET time_zone = "+00:00";
 CREATE TABLE `booking` (
   `kode_booking` int(11) NOT NULL,
   `tanggal_tour` varchar(20) NOT NULL,
-  `username` varchar(100) NOT NULL
+  `username` varchar(50) NOT NULL,
+  `id_paket_tour` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `booking`
+--
+
+INSERT INTO `booking` (`kode_booking`, `tanggal_tour`, `username`, `id_paket_tour`) VALUES
+(1, '20/01/2020', 'Dhany', 1),
+(2, '25/05/2020', 'Galang krsnt', 3);
 
 -- --------------------------------------------------------
 
@@ -156,7 +165,9 @@ INSERT INTO `user` (`username`, `password`, `name`, `email`, `gender`, `notelp`,
 -- Indexes for table `booking`
 --
 ALTER TABLE `booking`
-  ADD PRIMARY KEY (`kode_booking`);
+  ADD PRIMARY KEY (`kode_booking`),
+  ADD KEY `username` (`username`),
+  ADD KEY `id_paket_tour` (`id_paket_tour`);
 
 --
 -- Indexes for table `destinasi`
@@ -192,7 +203,7 @@ ALTER TABLE `user`
 -- AUTO_INCREMENT for table `booking`
 --
 ALTER TABLE `booking`
-  MODIFY `kode_booking` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `kode_booking` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT for table `destinasi`
@@ -210,11 +221,18 @@ ALTER TABLE `mobil_travel`
 -- AUTO_INCREMENT for table `paket_tour`
 --
 ALTER TABLE `paket_tour`
-  MODIFY `id_paket_tour` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `id_paket_tour` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- Constraints for dumped tables
 --
+
+--
+-- Constraints for table `booking`
+--
+ALTER TABLE `booking`
+  ADD CONSTRAINT `booking_ibfk_1` FOREIGN KEY (`username`) REFERENCES `user` (`username`),
+  ADD CONSTRAINT `booking_ibfk_2` FOREIGN KEY (`id_paket_tour`) REFERENCES `paket_tour` (`id_paket_tour`);
 
 --
 -- Constraints for table `paket_tour`
