@@ -102,7 +102,7 @@
 
   <h1>Kulon Progo</h1>
   <?php
-    $query = mysqli_query($kon, "SELECT * FROM destinasi WHERE lokasi_destinasi=-'Kulon Progo' ORDER BY id_destinasi LIMIT 3");
+    $query = mysqli_query($kon, "SELECT * FROM destinasi WHERE lokasi_destinasi= 'Kulon Progo' ORDER BY id_destinasi LIMIT 3");
     while ($row = mysqli_fetch_assoc($query)) {
       $lokasi = $row['lokasi_destinasi'];
       echo "
