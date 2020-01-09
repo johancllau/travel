@@ -32,7 +32,6 @@
 			$nama   = $row['nama_paket'];
 			$harga  = $row['harga_paket'];
 			$desc   = $row['description'];
-			$dest   = $row['id_destinasi'];
 			$travel = $row['kode_travell'];
 		}
 	?>
@@ -64,23 +63,6 @@
 						 while ($row = mysqli_fetch_assoc($query)) {
 						 	$kode = $row['kode_travell'];
 						 	if ($kode == $travel) {
-						 		echo "<option value='$kode' selected='true'>$kode</option>";
-						 	} else {
-						 		echo "<option value='$kode'>$kode</option>";
-						 	}
-						 }
-					?>
-			 	</select></td>
-			</tr>
-			<tr>
-				<td><label for="Destinasi">Id Destinasi</label></td>
-				<td><select name="destinasi" id="Destinasi">
-					<?php 
-						 $query = mysqli_query($kon, "SELECT * FROM destinasi ORDER BY id_destinasi ASC");
-						 echo "<option value=''>Select</option>";
-						 while ($row = mysqli_fetch_assoc($query)) {
-						 	$kode = $row['id_destinasi'];
-						 	if ($kode == $dest) {
 						 		echo "<option value='$kode' selected='true'>$kode</option>";
 						 	} else {
 						 		echo "<option value='$kode'>$kode</option>";

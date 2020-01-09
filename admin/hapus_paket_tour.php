@@ -6,8 +6,7 @@
  	while ($row = mysqli_fetch_assoc($hasil)) {
  	    $nama   = $row['nama_paket'];
  	    $harga  = $row['harga_paket'];
-      $desc = $row['description'];
-      $dest = $row['id_destinasi'];
+        $desc = $row['description'];
  	    $travel = $row['kode_travell'];
  	}
 
@@ -40,9 +39,6 @@
  		</tr>
     <tr>
       <td>Description Paket Tour</td><td><?= $desc ?></td>
-    </tr>
-    <tr>
-      <td>Destinasi </td><td><?= "Id Destinasi = $dest" ?></td>
     </tr>
  		<tr>
  			<td>Travel</td><td><?= "Id Travell = $travel" ?></td>
