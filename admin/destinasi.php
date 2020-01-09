@@ -43,7 +43,7 @@
     </div>
     </div>
 
-    <div class="container thumbs">
+
     <h1>Yogyakarta</h1>
     <?php
       include "../koneksi.php";
@@ -66,7 +66,7 @@
             </div>";
       }
   ?>
-    </div>
+
 
   <div class="btn-toolbar text-center">
     <div class="add">
