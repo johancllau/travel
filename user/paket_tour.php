@@ -86,7 +86,7 @@
                 <td align='center'>".$row['kapasitas']." Penumpang</td>
                 <td align='center'>Rp. ".$row['harga_paket']."</td>
                 <td align='center'>".$row['description']."</td>
-                <td align='center'><a href='form_login.html'>Booking</td>
+                <td align='center'><a href='form_booking.php?id_paket=".$row['id_destinasi']."'>Booking</td>
               </tr>
             ";
             $id = $row['id_paket_tour'];
