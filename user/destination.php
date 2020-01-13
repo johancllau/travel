@@ -32,11 +32,6 @@
     </div>
 
     <!-- Thumbnails -->
-    <div class="search">
-      <input type="text" placeholder="Search.." name="search">
-      <button type="submit"><i class="fa fa-search"></i></button>
-    </div>
-
     <div class="btn-toolbar text-center">
 
     </div>

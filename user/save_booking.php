@@ -23,7 +23,7 @@
 
     if (isset($_POST['submit']) and !empty($_POST['submit'])) {
    	    $tgl      = $_POST['tanggal_tour'];
-        $id_paket = $_POST['id_paket'];
+        $id_paket = $_POST['id_paket_tour'];
         $username = $_SESSION['user'];
         
        	$falidate_date = true;

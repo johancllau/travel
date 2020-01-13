@@ -33,8 +33,10 @@
 
     <!-- Thumbnails -->
     <div class="search">
+    <form name="goleki" action="#" method="post">
       <input type="text" placeholder="Search.." name="search">
-      <button type="submit"><i class="fa fa-search"></i></button>
+      <button type="submit" name="cari"><i class="fa fa-search"></i></button>
+    </form>
     </div>
 
     <div class="btn-toolbar text-center">
@@ -43,7 +45,27 @@
 
     <div class="container thumbs">
     <?php
-      include "../koneksi.php";
+    include "../koneksi.php";
+    if(isset($_POST['cari'])){
+     $nama = $_POST['search'];
+     $query = mysqli_query($kon, "SELECT * FROM destinasi WHERE nama_destinasi LIKE '%".$nama."%' ORDER BY id_destinasi");
+     while ($row = mysqli_fetch_assoc($query)) {
+       echo "
+           <div class='col-sm-6 col-md-4'>
+             <div class='thumbnail'>
+               <img src='../pict/".$row['image_destinasi']."' alt='' class='img-responsive'>
+               <div class='caption'>
+                 <h4>".$row['nama_destinasi']."</h4>
+                 <p>".(str_word_count($row['description'])> 10 ? substr($row['description'],0,100)."..." : $row['description'])."</p>
+                 <div class='btn-toolbar text-center'>
+                   <a href='detail_destinasi.php?id_destinasi=".$row['id_destinasi']."' role='button' class='btn btn-primary pull-right'>Details</a>
+                 </div>
+               </div>
+             </div>
+           </div>
+           ";
+     }
+     }else{
       $lokasi = $_GET['lokasi_destinasi'];
       echo "<h1>".$lokasi."</h1>";
       $query = mysqli_query($kon, "SELECT * FROM destinasi WHERE lokasi_destinasi='$lokasi' ORDER BY id_destinasi");
@@ -62,7 +84,7 @@
               </div>
             </div>
             ";
-      }
+      }}
   ?>
 
 </div>
