@@ -60,7 +60,6 @@
                 <th>Orang Yang Booking</th>
                 <th>Nama Paket</th>
                 <th>Description Paket</th>
-                <th>Aksi</th>
           ";
       while ($row = mysqli_fetch_assoc($query)) {
         echo "
@@ -70,7 +69,6 @@
                 <td align='center'>".$row['name']."</td>
                 <td align='center'>".$row['nama_paket']."</td>
                 <td align='center'>".$row['description']."</td>
-                <td align='center'><a href=''>Edit</a><br/><a href=''>Hapus</a></td>
               </tr>
             ";
       }
