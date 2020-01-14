@@ -46,8 +46,31 @@
     </div>
 
     <div class="container thumbs">
-    <?php
-      include "../koneksi.php";
+  <?php
+    include "../koneksi.php";
+
+    if (isset($_POST['searching']) && !empty($_POST['searching'])) {
+      $nama = $_POST['nama_destinasi'];
+      $query = mysqli_query($kon, "SELECT * FROM destinasi WHERE nama_destinasi LIKE '%$nama%' ORDER BY id_destinasi");
+      $hasil = mysqli_fetch_assoc($query);
+      echo "<h1>".$hasil['lokasi_destinasi']."</h1>";
+      while ($row = mysqli_fetch_assoc($query)) {
+        echo "
+            <div class='col-sm-6 col-md-4'>
+              <div class='thumbnail'>
+                <img src='../pict/".$row['image_destinasi']."' alt='' class='img-responsive'>
+                <div class='caption'>
+                  <h3 class=''>".$row['nama_destinasi']."</h3>
+                  <p>".$row['description']."</p>
+                  <div class='btn-toolbar text-center'>
+                    <a href='detail_destinasi.php?id_destinasi=".$row['id_destinasi']."' role='button' class='btn btn-primary pull-right'>Details</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+            ";
+      }
+    } else {
       $lokasi = $_GET['lokasi_destinasi'];
       echo "<h1>".$lokasi."</h1>";
       $query = mysqli_query($kon, "SELECT * FROM destinasi WHERE lokasi_destinasi='$lokasi' ORDER BY id_destinasi");
@@ -67,30 +90,8 @@
             </div>
             ";
       }
-  ?>
-
-  <?php 
-    if (isset($_POST['searching']) && !empty($_POST['searching'])) {
-      $nama = $_POST['nama_destinasi'];
-      $query = mysqli_query($kon, "SELECT * FROM destinasi WHERE nama_destinasi LIKE '%$nama%' ORDER BY id_destinasi");
-      while ($row = mysqli_fetch_assoc($query)) {
-        echo "
-            <div class='col-sm-6 col-md-4'>
-              <div class='thumbnail'>
-                <img src='../pict/".$row['image_destinasi']."' alt='' class='img-responsive'>
-                <div class='caption'>
-                  <h3 class=''>".$row['nama_destinasi']."</h3>
-                  <p>".$row['description']."</p>
-                  <div class='btn-toolbar text-center'>
-                    <a href='detail_destinasi.php?id_destinasi=".$row['id_destinasi']."' role='button' class='btn btn-primary pull-right'>Details</a>
-                  </div>
-                </div>
-              </div>
-            </div>
-            ";
-      }
     }
-?>
+  ?>
 
 </div>
     <!-- Footer -->
