@@ -55,19 +55,6 @@
 			 	</select></td>
 			</tr>
 			<tr>
-				<td><label for="Destinasi">Id Destinasi</label></td>
-				<td><select name="destinasi" id="Destinasi">
-					<?php 
-						 $query = mysqli_query($kon, "SELECT * FROM destinasi ORDER BY id_destinasi ASC");
-						 echo "<option value=''>Select</option>";
-						 while ($row = mysqli_fetch_assoc($query)) {
-						 	$kode = $row['id_destinasi'];
-						 	echo "<option value='$kode'>$kode</option>";
-						 }
-					?>
-			 	</select></td>
-			</tr>
-			<tr>
 				<td colspan="2" align="center">
 					<input type="button" name="cancel" value="Cancel" align="center" onclick="self.history.back()" class="btn btn-danger">
 					<input type="reset" name="reset" value="Reset" align="center" class="btn btn-success">

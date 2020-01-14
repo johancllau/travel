@@ -33,10 +33,10 @@
 
     <!-- Thumbnails -->
     <div class="search">
-      <form = name="form_search_destinasi" action="#" method="post">
-        <input type="text" placeholder="Search.." name="nama_destinasi">
-        <button type="submit" name="searching" value="cari"><i class="fa fa-search"></i></button>
-      </form>
+    <form name="goleki" action="#" method="post">
+      <input type="text" placeholder="Search.." name="search">
+      <button type="submit" name="cari"><i class="fa fa-search"></i></button>
+    </form>
     </div>
 
     <div class="btn-toolbar text-center">
@@ -46,6 +46,7 @@
     </div>
 
     <div class="container thumbs">
+<<<<<<< HEAD
   <?php
     include "../koneksi.php";
 
@@ -54,14 +55,41 @@
       $query = mysqli_query($kon, "SELECT * FROM destinasi WHERE nama_destinasi LIKE '%$nama%' ORDER BY id_destinasi");
       $hasil = mysqli_fetch_assoc($query);
       echo "<h1>".$hasil['lokasi_destinasi']."</h1>";
+=======
+    <?php
+    include "../koneksi.php";
+    if(isset($_POST['cari'])){
+     $nama = $_POST['search'];
+     $query = mysqli_query($kon, "SELECT * FROM destinasi WHERE nama_destinasi LIKE '%".$nama."%' ORDER BY id_destinasi");
+     while ($row = mysqli_fetch_assoc($query)) {
+       echo "
+           <div class='col-sm-6 col-md-4'>
+             <div class='thumbnail'>
+               <img src='../pict/".$row['image_destinasi']."' alt='' class='img-responsive'>
+               <div class='caption'>
+                 <h4>".$row['nama_destinasi']."</h4>
+                 <p>".(str_word_count($row['description'])> 10 ? substr($row['description'],0,100)."..." : $row['description'])."</p>
+                 <div class='btn-toolbar text-center'>
+                   <a href='detail_destinasi.php?id_destinasi=".$row['id_destinasi']."' role='button' class='btn btn-primary pull-right'>Details</a>
+                 </div>
+               </div>
+             </div>
+           </div>
+           ";
+     }
+     }else{
+      $lokasi = $_GET['lokasi_destinasi'];
+      echo "<h1>".$lokasi."</h1>";
+      $query = mysqli_query($kon, "SELECT * FROM destinasi WHERE lokasi_destinasi='$lokasi' ORDER BY id_destinasi");
+>>>>>>> 708a0b956539741c454f5c7f17ea80d23af07574
       while ($row = mysqli_fetch_assoc($query)) {
         echo "
             <div class='col-sm-6 col-md-4'>
               <div class='thumbnail'>
                 <img src='../pict/".$row['image_destinasi']."' alt='' class='img-responsive'>
                 <div class='caption'>
-                  <h3 class=''>".$row['nama_destinasi']."</h3>
-                  <p>".$row['description']."</p>
+                <h4>".$row['nama_destinasi']."</h4>
+                <p>".(str_word_count($row['description'])> 10 ? substr($row['description'],0,100)."..." : $row['description'])."</p>
                   <div class='btn-toolbar text-center'>
                     <a href='detail_destinasi.php?id_destinasi=".$row['id_destinasi']."' role='button' class='btn btn-primary pull-right'>Details</a>
                   </div>
@@ -69,6 +97,7 @@
               </div>
             </div>
             ";
+<<<<<<< HEAD
       }
     } else {
       $lokasi = $_GET['lokasi_destinasi'];
@@ -91,6 +120,9 @@
             ";
       }
     }
+=======
+      }}
+>>>>>>> 708a0b956539741c454f5c7f17ea80d23af07574
   ?>
 
 </div>

@@ -786,6 +786,7 @@ pre code {
   padding-left: 15px;
   margin-right: auto;
   margin-left: auto;
+  display: block;
 }
 
 .container:before,
@@ -5297,9 +5298,10 @@ a.thumbnail.active {
 }
 
 .thumbnail .caption {
-  padding: 9px;
+  padding: wrap-content;
   color: #333333;
 }
+
 
 .alert {
   padding: 15px;
