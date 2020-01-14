@@ -59,9 +59,10 @@
             </div>";
       }
   ?>
-
   <div class="btn-toolbar text-center">
-
+    <div class="add">
+      <a href="more_destinasi.php?lokasi_destinasi=<?php echo $lokasi; ?>" role="button" class="btn btn-success">More ...</a>
+    </div>
   </div>
 
   <h1>Gunung Kidul</h1>
