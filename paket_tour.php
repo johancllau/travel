@@ -32,13 +32,6 @@
     </div>
 
     <!-- Thumbnails -->
-    <div class="search">
-    <form name="form-Booking" action="#" method="post">
-      <input type="text" placeholder="Search.." name="search">
-      <button type="submit" name="cari"><i class="fa fa-search"></i></button>
-    </form>
-    </div>
-
     <div class="btn-toolbar text-center">
 
     </div>

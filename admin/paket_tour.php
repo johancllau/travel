@@ -32,13 +32,6 @@
     </div>
 
     <!-- Thumbnails -->
-    <div class="search">
-      <form name="form-Booking" action="#" method="post">
-      <input type="text" placeholder="Search.." name="search">
-      <button type="submit" name="cari"><i class="fa fa-search"></i></button>
-    </form>
-    </div>
-
     <div class="btn-toolbar text-center">
       <div class="add">
         <a href="form_input_data_paket_tour.php" role="button" class="btn btn-success">Add Paket Tour</a>
