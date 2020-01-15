@@ -49,11 +49,9 @@
     include "../koneksi.php";
     if(isset($_POST['cari'])){
       $cari = $_POST['search'];
-      $select = "SELECT pt.id_paket_tour, pt.nama_paket, pt.harga_paket, pt.description,
-      d.nama_destinasi, d.id_destinasi,
+      $select = "SELECT pt.id_paket_tour, pt.nama_paket, pt.daftar_destinasi, pt.harga_paket, pt.description,
       mt.kapasitas, mt.image_travell
       FROM paket_tour AS pt
-      JOIN destinasi AS d ON pt.id_paket_tour = d.id_paket_tour
       JOIN mobil_travel AS mt ON pt.kode_travell = mt.kode_travell  WHERE  pt.nama_paket LIKE '%".$cari."%'" ;
       $query = mysqli_query($kon, $select);
       echo "
@@ -71,33 +69,24 @@
           $id_des = null;
           $nama_des = null;
           while ($row = mysqli_fetch_assoc($query)) {
-            if($id == $row['id_paket_tour']) {
-              $nama_des = $row['nama_destinasi'];
-              $id_des = $row['id_destinasi'];
-            } else {
               echo "
               <tr>
                 <td align='center'>".$row['nama_paket']."</td>
-                <td align='center'>
-                  <a href='detail_destinasi.php?id_destinasi=".$row['id_destinasi']."'>".$row['nama_destinasi'].",</a>
-                  <a href='detail_destinasi.php?id_destinasi=".$id_des."'>".$nama_des."</a>
-                </td>
+                <td align='center'>".$row['daftar_destinasi']."</td>
                 <td align='center'><img src='../pict/".$row['image_travell']."' width='150' height='150'></td>
                 <td align='center'>".$row['kapasitas']." Penumpang</td>
                 <td align='center'>Rp. ".$row['harga_paket']."</td>
                 <td align='center'>".$row['description']."</td>
-                <td align='center'><a href='form_booking.php?id_paket=".$row['id_destinasi']."'>Booking</td>
+                <td align='center'><a href='form_booking.php?id_paket=".$row['id_paket_tour']."'>Booking</td>
               </tr>
             ";
             $id = $row['id_paket_tour'];
-            }}
+            }
       echo "</table>";
     }else{
-      $select = "SELECT pt.id_paket_tour, pt.nama_paket, pt.harga_paket, pt.description,
-      d.nama_destinasi, d.id_destinasi,
-      mt.kapasitas, mt.image_travell
+      $select = "SELECT pt.id_paket_tour, pt.nama_paket, pt.daftar_destinasi, pt.harga_paket, 
+                  pt.description, mt.kapasitas, mt.image_travell
       FROM paket_tour AS pt
-      JOIN destinasi AS d ON pt.id_paket_tour = d.id_paket_tour
       JOIN mobil_travel AS mt ON pt.kode_travell = mt.kode_travell";
       $query = mysqli_query($kon, $select);
       echo "
@@ -106,35 +95,27 @@
                 <th>Destinasi</th>
                 <th>Travell</th>
                 <th>Kapasitas</th>
-                <th>Harga</th>
+                <th>H darga</th>
                 <th>Description</th>
-                <th>Booking</th>
+                <th>Aksi</th>
           ";
-
-          $id = 0;
-          $id_des = null;
-          $nama_des = null;
-          while ($row = mysqli_fetch_assoc($query)) {
-            if($id == $row['id_paket_tour']) {
-              $nama_des = $row['nama_destinasi'];
-              $id_des = $row['id_destinasi'];
-            } else {
-              echo "
-              <tr>
-                <td align='center'>".$row['nama_paket']."</td>
-                <td align='center'>
-                  <a href='detail_destinasi.php?id_destinasi=".$row['id_destinasi']."'>".$row['nama_destinasi'].",</a>
-                  <a href='detail_destinasi.php?id_destinasi=".$id_des."'>".$nama_des."</a>
-                </td>
-                <td align='center'><img src='../pict/".$row['image_travell']."' width='150' height='150'></td>
-                <td align='center'>".$row['kapasitas']." Penumpang</td>
-                <td align='center'>Rp. ".$row['harga_paket']."</td>
-                <td align='center'>".$row['description']."</td>
-                <td align='center'><a href='form_booking.php?id_paket=".$row['id_destinasi']."'>Booking</td>
-              </tr>
-            ";
+      $id = 0;
+      $id_des = null;
+      $nama_des = null;
+      while ($row = mysqli_fetch_assoc($query)) {
+          echo "
+          <tr>
+            <td align='center'>".$row['nama_paket']."</td>
+            <td align='center'>".$row['daftar_destinasi']."</td>
+            <td align='center'><img src='../pict/".$row['image_travell']."' width='150' height='150'></td>
+            <td align='center'>".$row['kapasitas']." Penumpang</td>
+            <td align='center'>Rp. ".$row['harga_paket']."</td>
+            <td align='center'>".$row['description']."</td>
+            <td align='center'><a href='form_booking.php?id_paket=".$row['id_paket_tour']."'>Booking</td>
+          </tr>
+        ";
             $id = $row['id_paket_tour'];
-            }}}
+            }}
       echo "</table>";
   ?>
 
@@ -149,6 +130,5 @@
     <!-- Include all compiled plugins (below), or include individual files as needed -->
     <script src="../js/bootstrap.min.js"></script>
     <script src="../js/bootshape.js"></script>
-
   </body>
 </html>

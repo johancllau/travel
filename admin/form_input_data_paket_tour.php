@@ -30,6 +30,10 @@
 				<td><input type="text" name="nama" id="Nama" placeholder="Nama"></td>
 			</tr>
 			<tr>
+				<td><label for="Harga">Daftar Destinasi</label></td>
+				<td><input type="text" name="tempat" id="Harga" placeholder="tempat"></td>
+			</tr>
+			<tr>
 				<td><label for="Harga">Harga</label></td>
 				<td><input type="text" name="harga" id="Harga" placeholder="Rp. 2000"></td>
 			</tr>
@@ -41,15 +45,16 @@
 				</td>
 			</tr>
 			<tr>
-				<td><label for="Travell">Id Travell</label></td>
-				<td><select name="travell" id="Travell">
+				<td><label for="Travell">Nama Armada Travel</label></td>
+				<td><select name="travel" id="Travell">
 					<?php 
 						 include "../koneksi.php";
 						 $query = mysqli_query($kon, "SELECT * FROM mobil_travel ORDER BY kode_travell ASC");
 						 echo "<option value=''>Select</option>";
 						 while ($row = mysqli_fetch_assoc($query)) {
 						 	$kode = $row['kode_travell'];
-						 	echo "<option value='$kode'>$kode</option>";
+						 	$na = $row['nama_armada'];
+						 	echo "<option value='$kode'>$na</option>";
 						 }
 					?>
 			 	</select></td>
